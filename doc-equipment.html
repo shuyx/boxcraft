@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备管理 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 设备管理：AI Box 设备池分配、覆盖范围、发放流程、借用协议。">
+    <link rel="stylesheet" href="doc.css">
+</head>
+
+<body>
+    <nav class="doc-nav">
+        <div class="nav-inner">
+            <a href="community.html" class="nav-back">← 返回社区</a>
+            <span class="nav-title">BoxCraft <span class="green">2026</span></span>
+        </div>
+      <a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem; text-decoration:none; margin-left: auto;">🌙</a>
+    </nav>
+
+    <main class="doc-container">
+        <header class="doc-header">
+            <h1>📦 设备管理</h1>
+            <div class="meta">
+                <span>📌 版本 v0.4</span>
+                <span>📅 2026-03-05</span>
+            </div>
+        </header>
+
+        <article class="doc-content">
+
+            <h2>一、设备池总量与分配</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>类别</th>
+                            <th>数量</th>
+                            <th>用途</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>参赛开发用</td>
+                            <td>25 台</td>
+                            <td>入选团队开发借用</td>
+                        </tr>
+                        <tr>
+                            <td>备机</td>
+                            <td>3 台</td>
+                            <td>替换故障/损坏设备</td>
+                        </tr>
+                        <tr>
+                            <td>决赛现场备用</td>
+                            <td>2 台</td>
+                            <td>路演现场应急</td>
+                        </tr>
+                        <tr>
+                            <td><strong>合计</strong></td>
+                            <td><strong>30 台</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>二、覆盖范围</h2>
+            <ul>
+                <li><strong>主要覆盖</strong>：长三角地区（上海、浙江、江苏、安徽）</li>
+                <li><strong>物流方式</strong>：顺丰保价，<strong>包邮</strong>（双程）</li>
+                <li>非长三角团队如有特殊需求，可协商解决</li>
+            </ul>
+
+            <hr>
+
+            <h2>三、发放流程</h2>
+            <pre><code>阶段 1：开放报名（4 月）→ 团队提交报名表 + 项目提案
+阶段 2：第一轮筛选（4 月中）→ 提案评审，选出 35-40 支进入第二轮
+阶段 3：第二轮筛选（4 月底 - 5 月初）→ 轻量预热任务，选出 25 支
+阶段 4：签署协议 &amp; 设备发放（5 月初）→ 顺丰保价发送
+阶段 5：开发期（5-6 月）→ 中期检查，僵尸队清退回收
+阶段 6：设备回收（7 月中 - 赛后）
+  → 未入围队：半决赛后 7 天内寄回
+  → 决赛队：决赛现场统一回收
+  → 获奖队（冠/亚军）：设备赠送，无需归还</code></pre>
+
+            <hr>
+
+            <h2>四、报名超过 30 支的应对</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>方案</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>分批发放</strong></td>
+                            <td>第一批 25 队；中期清退后释放的设备分配给候补队</td>
+                        </tr>
+                        <tr>
+                            <td><strong>远程模拟环境</strong></td>
+                            <td>提供 AI Box 云端模拟器/Docker 镜像</td>
+                        </tr>
+                        <tr>
+                            <td><strong>校内共享</strong></td>
+                            <td>同校多队可协商共享设备（分时使用）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>五、设备借用协议要点</h2>
+            <ul>
+                <li><strong>借用期限</strong>：从发放日至赛事结束后 7 天</li>
+                <li><strong>设备归属</strong>：祥承科技所有</li>
+                <li><strong>使用范围</strong>：仅限 BoxCraft 2026 赛事开发</li>
+                <li><strong>损坏/丢失</strong>：正常磨损不追究；人为损坏按成本价 50% 赔偿；丢失/拒还按全额赔偿</li>
+                <li><strong>禁止行为</strong>：拆机、转借、商用</li>
+            </ul>
+
+        </article>
+
+        <footer class="doc-footer">
+            <a href="community.html" class="back-link">← 返回开发者社区</a>
+            <p class="copyright">© 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.</p>
+        </footer>
+    </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>

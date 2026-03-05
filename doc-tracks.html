@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛道与命题 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 赛道与命题详解：企业端侧 Agent、端侧感知与交互、AI Box 底座能力、自由创新四大赛道。">
+    <link rel="stylesheet" href="doc.css">
+</head>
+
+<body>
+    <nav class="doc-nav">
+        <div class="nav-inner">
+            <a href="community.html" class="nav-back">← 返回社区</a>
+            <span class="nav-title">BoxCraft <span class="green">2026</span></span>
+        </div>
+      <a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem; text-decoration:none; margin-left: auto;">🌙</a>
+    </nav>
+
+    <main class="doc-container">
+        <header class="doc-header">
+            <h1>🧩 赛道与命题</h1>
+            <div class="meta">
+                <span>📌 版本 v0.4</span>
+                <span>📅 2026-03-05</span>
+            </div>
+        </header>
+
+        <article class="doc-content">
+
+            <h2>一、赛道总览（3+1 结构）</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>赛道</th>
+                            <th>方向</th>
+                            <th>类型</th>
+                            <th>定位</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>A：企业端侧 Agent</strong></td>
+                            <td>智能导购 / 工业 SOP 诊断 / 销售合规助手</td>
+                            <td>命题</td>
+                            <td>当下落点，48 TOPS 完全够用</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B：端侧感知与交互</strong></td>
+                            <td>多模态交互、语音/图像理解、人机协作</td>
+                            <td>命题</td>
+                            <td>桥梁，连接 Agent 与物理世界</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C：AI Box 底座能力</strong></td>
+                            <td>插件系统 / 多 Agent 编排</td>
+                            <td>命题</td>
+                            <td>平台化能力验证</td>
+                        </tr>
+                        <tr>
+                            <td><strong>D：自由创新</strong></td>
+                            <td>不限，机器人/具身方向可设专项奖</td>
+                            <td>开放</td>
+                            <td>未来窗口，鼓励探索</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>二、赛道 A 具体命题</h2>
+            <blockquote>已选定 3 个命题方向，均突出 AI Box 端侧优势（隐私/低延迟/离线）。</blockquote>
+
+            <h3>A2：智能客服/导购 Agent</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>场景</strong></td>
+                            <td>零售/电商场景：基于商品信息和用户意图，做推荐、答疑、下单引导</td>
+                        </tr>
+                        <tr>
+                            <td><strong>端侧优势</strong></td>
+                            <td>低延迟交互、个性化推荐不依赖云端、门店离线可用</td>
+                        </tr>
+                        <tr>
+                            <td><strong>验收标准</strong></td>
+                            <td>多轮对话完成至少 3 个完整导购场景（浏览-咨询-推荐-下单引导）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>A3：工业 SOP 诊断助手</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>场景</strong></td>
+                            <td>设备故障排查/维保流程引导：输入故障描述，按 SOP 逐步引导操作员排查</td>
+                        </tr>
+                        <tr>
+                            <td><strong>端侧优势</strong></td>
+                            <td>离线可用（车间/工厂网络差）、低延迟、数据不出产线</td>
+                        </tr>
+                        <tr>
+                            <td><strong>验收标准</strong></td>
+                            <td>完成至少 5 个故障场景的端到端排查流程</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>A4：销售话术/合规助手</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>场景</strong></td>
+                            <td>销售现场实时提供话术建议、合规检查（如金融/保险销售的话术红线提醒）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>端侧优势</strong></td>
+                            <td>实时性（销售现场秒级响应）、隐私（客户信息不上云）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>验收标准</strong></td>
+                            <td>模拟对话场景中能实时给出合规提示和话术建议</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>三、赛道 B 命题细节</h2>
+            <blockquote>假定 SDK 对摄像头和语音模块的支持已到位。</blockquote>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>子方向</th>
+                            <th>支持的外设/模块</th>
+                            <th>可能的命题示例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>视觉感知</strong></td>
+                            <td>USB/CSI 摄像头、深度相机等</td>
+                            <td>端侧物体识别与分拣助手、门店客流统计、货架合规巡检</td>
+                        </tr>
+                        <tr>
+                            <td><strong>语音交互</strong></td>
+                            <td>麦克风阵列、扬声器模组等</td>
+                            <td>离线语音对话 Agent、端侧声纹识别门禁、多语言实时翻译</td>
+                        </tr>
+                        <tr>
+                            <td><strong>多模态融合</strong></td>
+                            <td>视觉 + 语音 + 文本联合交互</td>
+                            <td>智能前台（刷脸+语音+工单联动）、无障碍辅助助手</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <blockquote>命题文档中需明确：SDK 支持的模组型号清单、接口规范、最小可运行示例，以及当模组不可用时的兜底方案。</blockquote>
+
+            <hr>
+
+            <h2>四、赛道 C 具体命题</h2>
+            <blockquote>侧重 AI Box 的平台化能力和生态价值。</blockquote>
+
+            <h3>C1：插件系统/技能扩展</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>场景</strong></td>
+                            <td>为 AI Box 开发可复用的 Agent 插件（如天气/日历/文件搜索/数据库查询），并设计标准化插件接口</td>
+                        </tr>
+                        <tr>
+                            <td><strong>验收标准</strong></td>
+                            <td>插件可独立安装/卸载、有标准化接口规范、可被其他 Agent 调用、附带开发文档</td>
+                        </tr>
+                        <tr>
+                            <td><strong>生态价值</strong></td>
+                            <td>获奖作品可直接沉淀为 SDK 的插件生态组成部分</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>C2：多 Agent 编排引擎</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>场景</strong></td>
+                            <td>实现轻量级多 Agent 协作框架：定义任务→拆分子任务→分配给不同 Agent→汇总结果</td>
+                        </tr>
+                        <tr>
+                            <td><strong>验收标准</strong></td>
+                            <td>至少 3 个 Agent 协作完成 1 个复杂任务</td>
+                        </tr>
+                        <tr>
+                            <td><strong>生态价值</strong></td>
+                            <td>编排引擎是 AI Box 作为「Agent 底座」的核心能力</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>五、赛道 D 开放赛道方向包</h2>
+            <blockquote>开放赛道仍要求「真实需求」，但提供方向包避免无边界发散，便于评审横向比较。</blockquote>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>行业一线提效</strong></td>
+                            <td>零售/连锁门店/仓储物流等的本地智能助手</td>
+                        </tr>
+                        <tr>
+                            <td><strong>安全与合规</strong></td>
+                            <td>隐私敏感场景的端侧智能（本地检索/推理/审计）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>公共服务/社会价值</strong></td>
+                            <td>养老/无障碍/应急科普/教育辅助（可用性优先）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>端侧多模态</strong></td>
+                            <td>语音/图像/文本结合的现场交互（强调低延迟与离线兜底）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>「盒子即平台」扩展</strong></td>
+                            <td>开发者工具、模型管理、可观测性</td>
+                        </tr>
+                        <tr>
+                            <td><strong>端云协同</strong></td>
+                            <td>在不泄露敏感数据前提下的云端增强（需说明数据策略）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </article>
+
+        <footer class="doc-footer">
+            <a href="community.html" class="back-link">← 返回开发者社区</a>
+            <p class="copyright">© 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.</p>
+        </footer>
+    </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>

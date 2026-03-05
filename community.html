@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发者社区 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 开发者社区：技术文档、训练营资源、开发工具包下载、社区论坛，让你从入门到参赛零障碍。">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="BoxCraft">
+                <span>BoxCraft <span class="year">2026</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#docs">文档</a></li>
+                <li><a href="#bootcamp">训练营</a></li>
+                <li><a href="#resources">资源</a></li>
+                <li><a href="#discuss">社区</a></li>
+                <li><a href="docs.html">策划文档</a></li>
+        <li><a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem;">🌙</a></li>
+        <li><a href="register.html" class="btn-primary" style="padding:8px 20px; font-size:0.85rem;">立即报名</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="comm-hero">
+        <div class="hero-content">
+            <div class="comm-badge">DEVELOPER COMMUNITY</div>
+            <h1>让 AI Agent 走出对话框<br><span class="green">连接真实世界</span></h1>
+            <p class="subtitle">文档 · 训练营 · SDK · 社区，从零开始构建你的端侧 Agent</p>
+            <div class="hero-buttons">
+                <a href="#docs" class="btn-primary">开始阅读文档</a>
+                <a href="https://github.com" class="btn-outline" target="_blank">⭐ GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK START -->
+    <section id="docs" style="background: var(--dark);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>快速<span class="green">上手</span></h2>
+                <p>三步开始你的 Agent 开发之旅</p>
+            </div>
+            <div class="steps-grid fade-in">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>环境准备</h3>
+                    <p>连接 AI Box，安装 SDK，配置开发环境</p>
+                    <div class="code-block">
+                        <code>$ pip install aibox-sdk</code>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Hello Agent</h3>
+                    <p>运行你的第一个端侧 Agent 示例</p>
+                    <div class="code-block">
+                        <code>$ aibox run hello-agent</code>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>构建 & 部署</h3>
+                    <p>将 Agent 打包并部署到 AI Box</p>
+                    <div class="code-block">
+                        <code>$ aibox deploy --target box</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCUMENTATION -->
+    <section>
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>技术<span class="green">文档</span></h2>
+                <p>全面覆盖从开发到部署的每个环节</p>
+            </div>
+            <div class="docs-grid fade-in">
+                <a class="doc-card" href="doc-handbook.html">
+                    <div class="doc-icon">📖</div>
+                    <div class="doc-info">
+                        <h4>赛事手册</h4>
+                        <p>完整赛事规则、参赛流程、提交规范一览</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a class="doc-card" href="doc-tracks.html">
+                    <div class="doc-icon">🧩</div>
+                    <div class="doc-info">
+                        <h4>赛道与命题</h4>
+                        <p>4 赛道设计 + 具体命题方向 + 样例数据需求</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a class="doc-card" href="doc-review.html">
+                    <div class="doc-icon">🤖</div>
+                    <div class="doc-info">
+                        <h4>评审机制</h4>
+                        <p>评审团构成、权重分配、Rubric 评分表、硬门槛</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a class="doc-card" href="doc-bootcamp.html">
+                    <div class="doc-icon">🎓</div>
+                    <div class="doc-info">
+                        <h4>训练营计划</h4>
+                        <p>3 场训练营安排、讲师阵容、文档体系</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a class="doc-card" href="doc-equipment.html">
+                    <div class="doc-icon">📦</div>
+                    <div class="doc-info">
+                        <h4>设备管理</h4>
+                        <p>AI Box 设备池、发放流程、借用协议</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a class="doc-card" href="doc-ip.html">
+                    <div class="doc-icon">📜</div>
+                    <div class="doc-info">
+                        <h4>IP 与知识产权</h4>
+                        <p>作品归属、优先权益、开源策略、合作窗口</p>
+                    </div>
+                    <span class="doc-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOTCAMP -->
+    <section id="bootcamp" style="background: var(--dark);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>三场<span class="green">训练营</span></h2>
+                <p>从入门到决赛冲刺，全程陪你走到底</p>
+            </div>
+            <div class="bootcamp-timeline fade-in">
+                <div class="boot-card">
+                    <div class="boot-phase">
+                        <span class="boot-badge">PHASE 1</span>
+                        <span class="boot-date">5 月上旬</span>
+                    </div>
+                    <h3>🚀 入门营</h3>
+                    <ul>
+                        <li>AI Box 开箱 & 环境配置</li>
+                        <li>端侧大模型基础</li>
+                        <li>第一个 Hello Agent</li>
+                        <li>SDK 核心 API 导览</li>
+                    </ul>
+                    <div class="boot-tag">线上直播 · 2 小时</div>
+                </div>
+                <div class="boot-card">
+                    <div class="boot-phase">
+                        <span class="boot-badge">PHASE 2</span>
+                        <span class="boot-date">5 月下旬</span>
+                    </div>
+                    <h3>⚡ 进阶营</h3>
+                    <ul>
+                        <li>多模态感知（视觉 + 语音）</li>
+                        <li>Tool Use & Function Calling</li>
+                        <li>多 Agent 编排模式</li>
+                        <li>性能优化 & 量化部署</li>
+                    </ul>
+                    <div class="boot-tag">线上直播 · 3 小时</div>
+                </div>
+                <div class="boot-card">
+                    <div class="boot-phase">
+                        <span class="boot-badge">PHASE 3</span>
+                        <span class="boot-date">6 月中旬</span>
+                    </div>
+                    <h3>🎯 冲刺营</h3>
+                    <ul>
+                        <li>Demo 打磨 & 视频制作</li>
+                        <li>路演技巧 & Pitch Deck</li>
+                        <li>评审标准深度解读</li>
+                        <li>1v1 导师答疑</li>
+                    </ul>
+                    <div class="boot-tag">线上 + 1v1 · 2 小时</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>开发<span class="green">资源</span></h2>
+                <p>工具包、示例代码、模型库，一键获取</p>
+            </div>
+            <div class="resources-grid fade-in">
+                <div class="res-card">
+                    <div class="res-icon">📦</div>
+                    <h4>AI Box SDK</h4>
+                    <p>Python SDK v2.0，支持端侧推理和 Agent 编排</p>
+                    <a href="#" class="res-link">下载 →</a>
+                </div>
+                <div class="res-card">
+                    <div class="res-icon">🧪</div>
+                    <h4>示例项目</h4>
+                    <p>5 个端到端示例：客服 Agent、视觉助手、IoT 控制等</p>
+                    <a href="#" class="res-link">GitHub →</a>
+                </div>
+                <div class="res-card">
+                    <div class="res-icon">🧠</div>
+                    <h4>模型库</h4>
+                    <p>预置在 AI Box 上的大模型列表、性能 Benchmark</p>
+                    <a href="#" class="res-link">查看 →</a>
+                </div>
+                <div class="res-card">
+                    <div class="res-icon">🔧</div>
+                    <h4>开发者工具</h4>
+                    <p>CLI 调试工具、日志查看器、性能分析面板</p>
+                    <a href="#" class="res-link">下载 →</a>
+                </div>
+                <div class="res-card">
+                    <div class="res-icon">📐</div>
+                    <h4>设计资源</h4>
+                    <p>UI 组件库、品牌素材、Demo 视频模板</p>
+                    <a href="#" class="res-link">获取 →</a>
+                </div>
+                <div class="res-card">
+                    <div class="res-icon">📝</div>
+                    <h4>提交模板</h4>
+                    <p>项目 README 模板、技术文档模板、演示脚本</p>
+                    <a href="#" class="res-link">下载 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY / DISCUSS -->
+    <section id="discuss" style="background: var(--dark);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>加入<span class="green">社区</span></h2>
+                <p>与其他开发者交流、分享、共同成长</p>
+            </div>
+            <div class="community-channels fade-in">
+                <a class="channel-card" href="#" target="_blank">
+                    <div class="ch-icon">💬</div>
+                    <h4>微信群</h4>
+                    <p>扫码加入官方开发者微信群，实时交流</p>
+                </a>
+                <a class="channel-card" href="#" target="_blank">
+                    <div class="ch-icon">🐙</div>
+                    <h4>GitHub Discussions</h4>
+                    <p>提问、分享、开源你的项目</p>
+                </a>
+                <a class="channel-card" href="#" target="_blank">
+                    <div class="ch-icon">📺</div>
+                    <h4>B 站频道</h4>
+                    <p>训练营回放、技术分享、Demo 展示</p>
+                </a>
+                <a class="channel-card" href="#" target="_blank">
+                    <div class="ch-icon">📧</div>
+                    <h4>邮件列表</h4>
+                    <p>订阅赛事通知、技术更新、关键节点提醒</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>准备好开始了吗？</h2>
+        <p>报名参赛，领取 AI Box，加入开发者社区</p>
+        <div class="hero-buttons" style="justify-content:center;">
+            <a href="register.html" class="btn-primary" style="font-size:1.1rem; padding: 14px 40px;">立即报名</a>
+            <a href="index.html" class="btn-outline" style="font-size:1.1rem; padding: 14px 40px;">返回首页</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="organizers">
+            <div class="org-row">联合主办：<strong>上海交通大学机器人研究所</strong> · <strong>联发科技（MediaTek）</strong></div>
+            <div class="org-row">核心赞助：<strong>上海祥承科技有限公司</strong></div>
+            <div class="org-row" style="color:#666; font-size:0.8rem;">协办（拟）：海安上海交通大学智能装备研究院 · 上海人工智能协会</div>
+        </div>
+        <div class="copyright">
+            © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>

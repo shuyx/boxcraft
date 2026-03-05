@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报名参赛 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 端侧 Agent 挑战赛报名页面。填写信息即可参赛，免费获得 AI Box 设备借用资格。">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="BoxCraft">
+                <span>BoxCraft <span class="year">2026</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="community.html">开发者社区</a></li>
+                <li><a href="index.html#tracks">赛道</a></li>
+                <li><a href="index.html#prizes">奖项</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- REGISTER PAGE -->
+    <section class="register-page">
+        <div class="register-container">
+            <!-- Left: Info -->
+            <div class="register-info fade-in">
+                <div class="comm-badge">REGISTRATION · 2026</div>
+                <h1>报名<br><span class="green">BoxCraft 2026</span></h1>
+                <p>填写以下信息完成报名。通过筛选的队伍将获得 AI Box 设备免费借用。</p>
+
+                <div class="reg-perks">
+                    <div class="perk"><span class="perk-icon">📦</span><span>免费借用 AI Box</span></div>
+                    <div class="perk"><span class="perk-icon">🎓</span><span>3 场训练营通行证</span></div>
+                    <div class="perk"><span class="perk-icon">💬</span><span>专属开发者社群</span></div>
+                    <div class="perk"><span class="perk-icon">🏆</span><span>冲刺 ¥100,000 奖金</span></div>
+                </div>
+
+                <div class="reg-deadline">
+                    <div class="deadline-label">报名截止</div>
+                    <div class="deadline-date">2026 年 4 月 30 日</div>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="register-form-wrap fade-in">
+                <form class="register-form" id="registerForm" onsubmit="handleSubmit(event)">
+                    <!-- Team Info -->
+                    <div class="form-section">
+                        <h3>👥 团队信息</h3>
+                        <div class="form-group">
+                            <label for="teamName">团队名称 <span class="req">*</span></label>
+                            <input type="text" id="teamName" placeholder="e.g. Team AlphaBox" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="memberCount">团队人数 <span class="req">*</span></label>
+                                <select id="memberCount" required>
+                                    <option value="">选择</option>
+                                    <option value="1">1 人</option>
+                                    <option value="2">2 人</option>
+                                    <option value="3">3 人</option>
+                                    <option value="4">4 人</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="track">参赛赛道 <span class="req">*</span></label>
+                                <select id="track" required>
+                                    <option value="">选择</option>
+                                    <option value="A">Track A · 企业端侧 Agent</option>
+                                    <option value="B">Track B · 端侧感知与交互</option>
+                                    <option value="C">Track C · AI Box 底座能力</option>
+                                    <option value="D">Track D · 自由创新</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Captain Info -->
+                    <div class="form-section">
+                        <h3>👤 队长信息</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="captainName">姓名 <span class="req">*</span></label>
+                                <input type="text" id="captainName" placeholder="你的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="captainEmail">邮箱 <span class="req">*</span></label>
+                                <input type="email" id="captainEmail" placeholder="name@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="captainPhone">手机号 <span class="req">*</span></label>
+                                <input type="tel" id="captainPhone" placeholder="138 xxxx xxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="school">学校/单位 <span class="req">*</span></label>
+                                <input type="text" id="school" placeholder="e.g. 上海交通大学" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="github">GitHub / 个人主页</label>
+                            <input type="url" id="github" placeholder="https://github.com/yourname">
+                        </div>
+                    </div>
+
+                    <!-- Project Proposal -->
+                    <div class="form-section">
+                        <h3>💡 项目提案</h3>
+                        <div class="form-group">
+                            <label for="projectTitle">项目名称 <span class="req">*</span></label>
+                            <input type="text" id="projectTitle" placeholder="一句话描述你的 Agent" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDesc">项目简述 <span class="req">*</span></label>
+                            <textarea id="projectDesc" rows="4" placeholder="描述你想做什么、解决什么问题、用到哪些端侧能力（200 字以内）"
+                                required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivation">参赛动机</label>
+                            <textarea id="motivation" rows="3" placeholder="为什么想参加 BoxCraft 2026？（选填）"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Agreement -->
+                    <div class="form-section">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree" required>
+                            <span>我已阅读并同意<a href="../A2｜参赛协议（草案）.md" target="_blank"
+                                    style="color:var(--green)">《参赛协议》</a>和<a href="../A3｜设备借用协议（草案）.md" target="_blank"
+                                    style="color:var(--green)">《设备借用协议》</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary submit-btn">提交报名</button>
+                </form>
+
+                <!-- Success State -->
+                <div class="success-state" id="successState" style="display:none;">
+                    <div class="success-icon">🎉</div>
+                    <h2>报名成功！</h2>
+                    <p>我们已收到你的报名信息。评审结果将在 <strong style="color:var(--green)">5 个工作日内</strong> 通过邮件通知。</p>
+                    <p style="color:var(--gray); margin-top: 12px;">请加入开发者社群，随时获取最新动态。</p>
+                    <div style="margin-top: 24px; display:flex; gap: 12px; justify-content: center;">
+                        <a href="community.html" class="btn-primary">加入开发者社区</a>
+                        <a href="index.html" class="btn-outline">返回首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="organizers">
+            <div class="org-row">联合主办：<strong>上海交通大学机器人研究所</strong> · <strong>联发科技（MediaTek）</strong></div>
+            <div class="org-row">核心赞助：<strong>上海祥承科技有限公司</strong></div>
+            <div class="org-row" style="color:#666; font-size:0.8rem;">协办（拟）：海安上海交通大学智能装备研究院 · 上海人工智能协会</div>
+        </div>
+        <div class="copyright">
+            © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            // Simulate submission
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>

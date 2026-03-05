@@ -1,0 +1,3009 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>策划文档 — BoxCraft 2026</title>
+  <meta name="description" content="BoxCraft 2026 赛事策划文档中心：项目概览、赛道命题、评审机制、训练营、设备管理、协议等完整文档。">
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+  <!-- Mobile toggle -->
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Reading progress -->
+  <div class="reading-progress"><div class="bar" id="progressBar"></div></div>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">BoxCraft <span class="green">2026</span></a>
+        <a href="index.html" class="back-link">← 返回官网</a>
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+      </div>
+      <div class="sidebar-search">
+        <input type="text" id="searchInput" placeholder="搜索文档..." oninput="filterNav(this.value)">
+      </div>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-group">
+<div class="nav-group-title">📋 项目概览</div>
+<a class="nav-item" data-target="overview" onclick="showDoc('overview')">📋 项目概览与定位</a>
+<a class="nav-item" data-target="handbook" onclick="showDoc('handbook')">📖 赛事手册（完整版）</a>
+</div>
+<div class="nav-group">
+<div class="nav-group-title">🧩 赛事规则</div>
+<a class="nav-item" data-target="tracks" onclick="showDoc('tracks')">🧩 赛道与命题</a>
+<a class="nav-item" data-target="timeline" onclick="showDoc('timeline')">📅 时间线与赛程</a>
+<a class="nav-item" data-target="review" onclick="showDoc('review')">🤖 评审机制</a>
+<a class="nav-item" data-target="registration" onclick="showDoc('registration')">📝 报名与参赛</a>
+</div>
+<div class="nav-group">
+<div class="nav-group-title">📦 参赛支持</div>
+<a class="nav-item" data-target="equipment" onclick="showDoc('equipment')">📦 设备管理</a>
+<a class="nav-item" data-target="bootcamp" onclick="showDoc('bootcamp')">🎓 训练营计划</a>
+<a class="nav-item" data-target="ip" onclick="showDoc('ip')">📜 IP 与知识产权</a>
+</div>
+<div class="nav-group">
+<div class="nav-group-title">📢 运营与传播</div>
+<a class="nav-item" data-target="promotion" onclick="showDoc('promotion')">📢 宣发与传播</a>
+<a class="nav-item" data-target="budget" onclick="showDoc('budget')">💰 预算与合规</a>
+<a class="nav-item" data-target="conversion" onclick="showDoc('conversion')">🔄 赛后转化</a>
+<a class="nav-item" data-target="checklist" onclick="showDoc('checklist')">✅ 待对齐清单</a>
+</div>
+<div class="nav-group">
+<div class="nav-group-title">📜 协议与法律</div>
+<a class="nav-item" data-target="agreement" onclick="showDoc('agreement')">📄 参赛协议（草案）</a>
+<a class="nav-item" data-target="device-loan" onclick="showDoc('device-loan')">📄 设备借用协议（草案）</a>
+</div>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+      <div class="docs-content" id="docsContent">
+        <div class="doc-section active" id="section-overview">
+<h1>📋 项目概览与定位</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、核心定位</h2>
+<blockquote><strong>AI Box = 最低门槛的端侧 AI Agent 开发平台。</strong></blockquote>
+<blockquote>不是卖一个盒子，而是给开发者一个底座——用最低成本、最快速度，把 AI Agent 从想法变成可部署的产品。</blockquote>
+<h3>分层叙事</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>层次</th>
+<th>叙事</th>
+<th>对应产品</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>当下落点</strong></td>
+<td>端侧 Agent 基座：数据不出盒子、低延迟、离线可靠、即插即用</td>
+<td>当前版本（天玑 9300 / 48 TOPS）</td>
+</tr>
+<tr>
+<td><strong>未来愿景</strong></td>
+<td>具身智能的端侧大脑</td>
+<td>下一代（~400 TOPS，路线图可公开）</td>
+</tr>
+</tbody></table></div>
+<blockquote>⚠ "具身智能"仅在 400 TOPS 路线图发布时使用，当前版本不打此标签。</blockquote>
+<h3>48 TOPS 宣传口径</h3>
+<p>不比参数大小，强调"<strong>绰绰有余</strong>"——对于任何行业、任何需求的 Agent 产品开发和验证来说，48 TOPS 端侧算力完全够用。</p>
+<hr>
+<h2>二、品牌命名</h2>
+<h3>比赛名称</h3>
+<blockquote><strong>BoxCraft 2026——AI Box 端侧 Agent 开发挑战赛</strong></blockquote>
+<h3>Slogan 体系</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>用途</th>
+<th>Slogan</th>
+<th>受众</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>开发者（底座）</strong></td>
+<td>「你的 AI Agent 产品，从这个底座开始」</td>
+<td>报名页/技术社区</td>
+</tr>
+<tr>
+<td><strong>开发者（算力）</strong></td>
+<td>「不用等更强的芯片——48 TOPS，今天就能做出你的 Agent 产品」</td>
+<td>训练营/开发者博客</td>
+</tr>
+<tr>
+<td><strong>开发者（连接）</strong></td>
+<td>「让 AI Agent 走出对话框，连接真实世界」</td>
+<td>GitHub/路演/社区</td>
+</tr>
+<tr>
+<td><strong>市场/行业</strong></td>
+<td>「把 Agent 装进盒子，让智能无处不在」</td>
+<td>年会演讲/媒体稿/官网</td>
+</tr>
+</tbody></table></div>
+<p><strong>D 系列（行业/市场教育）</strong></p>
+<ul>
+<li>D1：「AI Agent，触手可及」</li>
+<li>D2：「一个盒子，一个 Agent——AI 不必在云端」</li>
+<li>D3a：「把 Agent 装进盒子，把智能带到生产一线」</li>
+<li>D3c：「把 Agent 装进产品，把智能交到用户手中」</li>
+<li>D3d：「云端 AI 太远——这个盒子，让智能触手可及」</li>
+<li>D4：「不上云的 AI，才是你的 AI」</li>
+</ul>
+<p><strong>E 系列（开发者生态）</strong></p>
+<ul>
+<li>E1b：「最低门槛的端侧 Agent 开发平台——开箱即用」</li>
+<li>E1c：「别造轮子了——插上 AI Box，专注你的 Agent」</li>
+<li>E2a：「48 TOPS，够任何行业的 Agent 跑起来、跑出彩」</li>
+<li>E2b：「你的场景再复杂，48 TOPS 端侧算力也绰绰有余」</li>
+<li>E3b：「Agent 不只活在云端——让它真正部署到你的产品里」</li>
+</ul>
+<p><strong>F 系列（年会/行业论坛）</strong></p>
+<ul>
+<li>F1：「当 AI Agent 走出云端——端侧智能新基座」</li>
+<li>F2：「从云到端，AI Agent 的下一站」</li>
+</ul>
+<p><strong>比赛名称备选</strong></p>
+<ul>
+<li>N1：AI Box Agent Challenge 2026（简洁版）</li>
+<li>N3：Agent on Edge 2026</li>
+<li>N4：Box·智造——2026 AI Agent 开发挑战赛</li>
+<li>N5：端智杯 2026——AI Box Agent Challenge</li>
+</ul>
+<hr>
+<h2>三、活动基本信息</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>主舞台</strong></td>
+<td>上海交通大学机器人研究所 2026 年度学术年会</td>
+</tr>
+<tr>
+<td><strong>场地</strong></td>
+<td>虹桥国展中心金色大厅</td>
+</tr>
+<tr>
+<td><strong>年会时间</strong></td>
+<td>2026 年 7 月底</td>
+</tr>
+<tr>
+<td><strong>活动周期</strong></td>
+<td>3 月筹备 → 4 月报名 → 7 月决赛（~5 个月）</td>
+</tr>
+<tr>
+<td><strong>总预算上限</strong></td>
+<td>~30 万（祥承侧全口径）</td>
+</tr>
+</tbody></table></div>
+<h3>合作方</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>单位</th>
+<th>权益/贡献</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>联合主办</strong></td>
+<td>上海交通大学机器人研究所</td>
+<td>学术背书、场地、评委、学生渠道</td>
+</tr>
+<tr>
+<td><strong>联合主办</strong></td>
+<td>联发科技（MediaTek）</td>
+<td>芯片平台支持、品牌背书、高校渠道</td>
+</tr>
+<tr>
+<td><strong>核心赞助</strong></td>
+<td>上海祥承科技</td>
+<td>奖金（10万）、设备（30台）、技术支持、命题主导</td>
+</tr>
+<tr>
+<td><strong>协办方（拟）</strong></td>
+<td>海安交大研究院</td>
+<td>产学研转化平台、场地支持</td>
+</tr>
+<tr>
+<td><strong>协办方（拟）</strong></td>
+<td>地方政府（海安经开区等）</td>
+<td>赞助资金、政策支持、落地孵化场地</td>
+</tr>
+<tr>
+<td><strong>协办方（拟）</strong></td>
+<td>人工智能协会（国家/省级）</td>
+<td>行业背书、专家资源、传播渠道</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>四、文档索引</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>序号</th>
+<th>文档</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>项目概览与定位（本文件）</td>
+<td>定位、品牌、Slogan、合作方</td>
+</tr>
+<tr>
+<td>01</td>
+<td>赛道与命题</td>
+<td>4 赛道设计 + 具体命题 + 样例数据需求</td>
+</tr>
+<tr>
+<td>02</td>
+<td>时间线与赛程</td>
+<td>5 个月时间线 + 年会日程 + 半决赛/中期检查</td>
+</tr>
+<tr>
+<td>03</td>
+<td>评审机制</td>
+<td>评审团 + 权重 + Rubric + 硬门槛</td>
+</tr>
+<tr>
+<td>04</td>
+<td>报名与参赛</td>
+<td>资格 + 审核 + 预赛评估 + 报名系统</td>
+</tr>
+<tr>
+<td>05</td>
+<td>设备管理</td>
+<td>设备池 + 发放流程 + 借用协议</td>
+</tr>
+<tr>
+<td>06</td>
+<td>训练营计划</td>
+<td>3 场安排 + 讲师 + 文档体系</td>
+</tr>
+<tr>
+<td>07</td>
+<td>宣发与传播</td>
+<td>渠道矩阵 + 内容生产线 + 直播 + 审稿机制</td>
+</tr>
+<tr>
+<td>08</td>
+<td>预算与合规</td>
+<td>费用拆解 + 奖金税务 + 组委会确认项</td>
+</tr>
+<tr>
+<td>09</td>
+<td>IP 与知识产权</td>
+<td>归属 + 优先权益 + 仓库策略</td>
+</tr>
+<tr>
+<td>10</td>
+<td>赛后转化</td>
+<td>PoC 对接 + 优先级 + 执行路径</td>
+</tr>
+<tr>
+<td>11</td>
+<td>待对齐清单</td>
+<td>全量 38 项待确认事项</td>
+</tr>
+</tbody></table></div>
+</div>
+<div class="doc-section" id="section-handbook">
+<h1>📖 赛事手册（完整版）</h1>
+<div class="doc-meta"><span>📌 v1.0</span></div>
+<blockquote><strong>BoxCraft 2026——AI Box 端侧 Agent 开发挑战赛</strong></blockquote>
+<blockquote>版本：v1.0 · 发布日期：2026-03</blockquote>
+<blockquote>主办方：上海交通大学机器人研究所 × 联发科技（MediaTek）× 上海祥承科技</blockquote>
+<hr>
+<h2>一、活动概述</h2>
+<h3>1.1 关于 BoxCraft 2026</h3>
+<p>BoxCraft 2026 是一场面向开发者的端侧 AI Agent 开发挑战赛。</p>
+<p>我们相信，AI Agent 不应只存在于云端——它应该离用户更近、响应更快、数据更安全。BoxCraft 2026 邀请你基于 AI Box 端侧硬件平台，打造真正可落地的 AI Agent 应用。</p>
+<blockquote>「把 Agent 装进盒子，让智能无处不在」</blockquote>
+<h3>1.2 关于 AI Box</h3>
+<p>AI Box 是基于联发科天玑 9300 芯片的端侧 AI Agent 硬件工作站：</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>参数</th>
+<th>规格</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>核心芯片</td>
+<td>联发科天玑 9300</td>
+</tr>
+<tr>
+<td>端侧算力</td>
+<td>48 TOPS NPU</td>
+</tr>
+<tr>
+<td>操作系统</td>
+<td>Android</td>
+</tr>
+<tr>
+<td>外观</td>
+<td>~10-12cm 方正黑色盒子</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>USB、触控屏、多种 I/O</td>
+</tr>
+<tr>
+<td>软件架构</td>
+<td>Android 底层 → 组件抽象层 → Agent 应用层</td>
+</tr>
+</tbody></table></div>
+<blockquote>「不用等更强的芯片——48 TOPS，今天就能做出你的 Agent 产品」</blockquote>
+<h3>1.3 主办与赞助</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>单位</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>联合主办</td>
+<td>上海交通大学机器人研究所</td>
+</tr>
+<tr>
+<td>联合主办</td>
+<td>联发科技（MediaTek）</td>
+</tr>
+<tr>
+<td>核心赞助</td>
+<td>上海祥承科技有限公司</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>二、赛道说明</h2>
+<p>本次挑战赛设 <strong>3 条命题赛道 + 1 条开放赛道</strong>（3+1 结构）。</p>
+<h3>赛道 A：企业端侧 Agent（命题）</h3>
+<blockquote>面向企业办公与工业场景的端侧 Agent 解决方案。</blockquote>
+<p><strong>命题方向（选一）</strong>：</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>编号</th>
+<th>方向</th>
+<th>场景说明</th>
+<th>验收标准</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>A2</td>
+<td>智能客服/导购 Agent</td>
+<td>基于商品信息的推荐、答疑、下单引导</td>
+<td>多轮对话完成 ≥3 个完整导购场景</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>工业 SOP 诊断助手</td>
+<td>设备故障排查/维保流程引导</td>
+<td>完成 ≥5 个故障场景的端到端排查</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>销售话术/合规助手</td>
+<td>销售现场实时话术建议与合规检查</td>
+<td>模拟场景中实时给出合规提示</td>
+</tr>
+</tbody></table></div>
+<h3>赛道 B：端侧感知与交互（命题）</h3>
+<blockquote>利用 AI Box 的外设接口，实现多模态感知与人机交互。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>子方向</th>
+<th>外设</th>
+<th>命题示例</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>视觉感知</td>
+<td>USB/CSI 摄像头</td>
+<td>端侧物体识别、客流统计、货架巡检</td>
+</tr>
+<tr>
+<td>语音交互</td>
+<td>麦克风/扬声器</td>
+<td>离线语音对话、声纹识别、实时翻译</td>
+</tr>
+<tr>
+<td>多模态融合</td>
+<td>视觉+语音+文本</td>
+<td>智能前台、无障碍辅助助手</td>
+</tr>
+</tbody></table></div>
+<h3>赛道 C：AI Box 底座能力（命题）</h3>
+<blockquote>增强 AI Box 作为 Agent 平台的底层能力。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>编号</th>
+<th>方向</th>
+<th>说明</th>
+<th>验收标准</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>插件系统/技能扩展</td>
+<td>为 AI Box 开发可复用的 Agent 插件，设计标准化接口</td>
+<td>插件可安装/卸载、有标准接口、附开发文档</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>多 Agent 编排引擎</td>
+<td>轻量级多 Agent 协作框架</td>
+<td>≥3 个 Agent 协作完成 1 个复杂任务</td>
+</tr>
+</tbody></table></div>
+<h3>赛道 D：自由创新（开放）</h3>
+<blockquote>不限方向，但必须接入 AI Box 或官方 SDK/模拟环境。</blockquote>
+<ul>
+<li>鼓励探索机器人/具身智能/IoT/教育/创意等方向</li>
+<li>机器人/具身方向可角逐<strong>"具身智能探索奖"</strong>（专项奖）</li>
+<li>参赛队需在报名提案中说明选题理由和方案思路</li>
+</ul>
+<hr>
+<h2>三、参赛规则</h2>
+<h3>3.1 参赛资格</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>规则</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>参赛对象</td>
+<td>① 在校学生（本科/硕士/博士，不限学校）② 自由个人开发者。<strong>不接受企业参赛</strong></td>
+</tr>
+<tr>
+<td>团队规模</td>
+<td>1-4 人/队，需指定 1 名队长</td>
+</tr>
+<tr>
+<td>跨校组队</td>
+<td>允许且鼓励（跨院系/跨校/跨学科）</td>
+</tr>
+<tr>
+<td>地域限制</td>
+<td>无</td>
+</tr>
+</tbody></table></div>
+<h3>3.2 报名流程</h3>
+<ol>
+<li><strong>填写报名表</strong>：通过赛事官网提交团队信息</li>
+<li><strong>提交项目提案</strong>（1-2 页）：选题方向、目标用户、初步方案、如何利用 AI Box</li>
+<li><strong>提案评审</strong>（第一轮）：评审委员会书面审核，选出 35-40 支队伍</li>
+<li><strong>预热任务</strong>（第二轮）：完成 2-3 个轻量开发任务，验证技术能力</li>
+<li><strong>入选通知</strong>：选出 25 支队伍，签署协议并发放 AI Box 设备</li>
+</ol>
+<h3>3.3 报名审核标准</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>维度</th>
+<th>权重</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>方向可行性</td>
+<td>40%</td>
+<td>选题能否在 AI Box 上实现？</td>
+</tr>
+<tr>
+<td>团队匹配度</td>
+<td>30%</td>
+<td>技能覆盖度 + 相关经验</td>
+</tr>
+<tr>
+<td>方案创新性</td>
+<td>30%</td>
+<td>有独立思考和差异化</td>
+</tr>
+</tbody></table></div>
+<h3>3.4 作品要求</h3>
+<p><strong>必须满足（硬门槛）</strong>：</p>
+<ul>
+<li>✅ 能在 AI Box 或官方模拟环境上运行</li>
+<li>✅ 提供清晰的复现步骤（README + 环境说明）</li>
+<li>✅ 不触碰敏感数据，不提交密钥/账号</li>
+<li>✅ 提交物齐全：代码仓库 + 演示视频 + 路演 PPT + README</li>
+</ul>
+<p><strong>鼓励但不强制</strong>：</p>
+<ul>
+<li>开源代码</li>
+<li>编写技术博客分享开发过程</li>
+<li>录制开发 Vlog</li>
+</ul>
+<h3>3.5 AI 辅助编程规则</h3>
+<ul>
+<li>✅ <strong>允许并鼓励</strong>使用 AI 辅助编程工具（Copilot、Cursor、ChatGPT 等）</li>
+<li>✅ 需在 README 中<strong>披露使用的 AI 工具</strong></li>
+<li>✅ 需确保代码可复现、依赖清晰</li>
+<li>✅ 需遵守所有引用代码的开源协议</li>
+<li>❌ 不接受纯 AI 生成、无法解释的代码</li>
+</ul>
+<hr>
+<h2>四、赛程与时间线</h2>
+<h3>4.1 总体安排</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>阶段</th>
+<th>时间</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>📢 <strong>报名开放</strong></td>
+<td>4 月初</td>
+<td>提交报名表 + 项目提案</td>
+</tr>
+<tr>
+<td>🔍 <strong>提案评审</strong></td>
+<td>4 月底</td>
+<td>选出 35-40 支队进入第二轮</td>
+</tr>
+<tr>
+<td>🧪 <strong>预热任务</strong></td>
+<td>4 月底–5 月初</td>
+<td>完成轻量开发任务，选出 25 支入选队</td>
+</tr>
+<tr>
+<td>📦 <strong>设备发放</strong></td>
+<td>5 月初</td>
+<td>签署协议，AI Box 顺丰包邮寄送</td>
+</tr>
+<tr>
+<td>🎓 <strong>训练营 #1</strong></td>
+<td>5 月中</td>
+<td>线上：SDK 入门 + 快速上手</td>
+</tr>
+<tr>
+<td>🎓 <strong>训练营 #2</strong></td>
+<td>6 月初</td>
+<td>线上：多模态开发 + 最佳实践</td>
+</tr>
+<tr>
+<td>🎓 <strong>训练营 #3</strong></td>
+<td>6 月中下旬</td>
+<td>线下：进阶优化 + 答辩技巧</td>
+</tr>
+<tr>
+<td>📊 <strong>中期检查</strong></td>
+<td>6 月中</td>
+<td>进度确认，清退僵尸队</td>
+</tr>
+<tr>
+<td>📤 <strong>作品提交</strong></td>
+<td>7 月上旬</td>
+<td>代码 + 视频 + 文档锁定提交</td>
+</tr>
+<tr>
+<td>🏆 <strong>半决赛</strong></td>
+<td>7 月中旬</td>
+<td>线上异步评审，选出 TOP 8</td>
+</tr>
+<tr>
+<td>🎉 <strong>决赛</strong></td>
+<td>7 月底</td>
+<td>年会现场路演 + 颁奖</td>
+</tr>
+</tbody></table></div>
+<h3>4.2 决赛安排</h3>
+<ul>
+<li><strong>场地</strong>：虹桥国展中心金色大厅（2026 机器人年会主会场）</li>
+<li><strong>形式</strong>：8 支决赛队 × 12 分钟路演（8 分钟展示 + 4 分钟评委追问）</li>
+<li><strong>要求</strong>：路演需包含<strong>实机 Demo 演示</strong>（在 AI Box 上现场运行）</li>
+</ul>
+<hr>
+<h2>五、评审标准</h2>
+<h3>5.1 评审维度</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>维度</th>
+<th>权重</th>
+<th>关注点</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>创新性</strong></td>
+<td>25%</td>
+<td>方案原创性、差异化亮点、技术路线新颖</td>
+</tr>
+<tr>
+<td><strong>商业价值与影响</strong></td>
+<td>25%</td>
+<td>目标用户清晰、痛点真实、价值可量化</td>
+</tr>
+<tr>
+<td><strong>完成度与可用性</strong></td>
+<td>20%</td>
+<td>Demo 端到端可用、交互清晰、可解释</td>
+</tr>
+<tr>
+<td><strong>技术深度</strong></td>
+<td>15%</td>
+<td>工程结构、可复现性、离线兜底、合规</td>
+</tr>
+<tr>
+<td><strong>AI Box 适配度</strong></td>
+<td>15%</td>
+<td>体现端侧优势（隐私/低延迟/离线/外设）</td>
+</tr>
+</tbody></table></div>
+<blockquote>💡 不要求写完整商业计划书。能回答四个问题即可：<strong>给谁用、解决什么、带来什么提升、怎么部署/推广</strong>。</blockquote>
+<h3>5.2 评分标准（1-5 分）</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>维度</th>
+<th>1 分（不足）</th>
+<th>3 分（达标）</th>
+<th>5 分（优秀）</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>创新性</td>
+<td>套壳/轻微改动</td>
+<td>有明确亮点</td>
+<td>有明显突破且可解释</td>
+</tr>
+<tr>
+<td>商业价值</td>
+<td>痛点泛泛</td>
+<td>场景具体、可量化</td>
+<td>有验证迹象或可复制路径</td>
+</tr>
+<tr>
+<td>完成度</td>
+<td>只能"演"</td>
+<td>端到端可跑通</td>
+<td>体验顺滑且可解释</td>
+</tr>
+<tr>
+<td>技术深度</td>
+<td>不可复现</td>
+<td>按 README 可复现</td>
+<td>低成本复现 + 离线兜底</td>
+</tr>
+<tr>
+<td>AI Box 适配</td>
+<td>未体现端侧优势</td>
+<td>可在 Box 上跑通</td>
+<td>端侧优势显著有优化证据</td>
+</tr>
+</tbody></table></div>
+<h3>5.3 评审团</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>来源</th>
+<th>人数</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>学术评委</td>
+<td>上海交大教授</td>
+<td>2-3 人</td>
+</tr>
+<tr>
+<td>产业评委</td>
+<td>祥承科技</td>
+<td>2 人</td>
+</tr>
+<tr>
+<td>行业专家</td>
+<td>联发科/AI 行业</td>
+<td>1-2 人</td>
+</tr>
+<tr>
+<td>投资人评委</td>
+<td>VC / 投资人</td>
+<td>1 人</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>六、奖项设置</h2>
+<h3>6.1 奖金（税前）</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>奖项</th>
+<th>名额</th>
+<th>奖金</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>🥇 <strong>冠军</strong></td>
+<td>1</td>
+<td>¥30,000</td>
+</tr>
+<tr>
+<td>🥈 <strong>亚军</strong></td>
+<td>2</td>
+<td>¥15,000 / 队</td>
+</tr>
+<tr>
+<td>🥉 <strong>季军</strong></td>
+<td>3</td>
+<td>¥8,000 / 队</td>
+</tr>
+<tr>
+<td>🏅 <strong>专项奖</strong></td>
+<td>4</td>
+<td>¥4,000 / 队</td>
+</tr>
+</tbody></table></div>
+<blockquote>奖金为税前金额，由主办方依法代扣代缴个人所得税（偶然所得 20%）。</blockquote>
+<p><strong>专项奖方向（暂定）</strong>：</p>
+<ul>
+<li>🔧 最佳工程实践奖</li>
+<li>💡 最具商业潜力奖</li>
+<li>🤖 具身智能探索奖</li>
+<li>🌟 最佳人气奖</li>
+</ul>
+<h3>6.2 非现金激励</h3>
+<ul>
+<li>🎁 冠军/亚军获赠 AI Box 设备一台</li>
+<li>💼 获奖团队进入祥承实习/校招<strong>直通面试</strong></li>
+<li>🤝 获奖项目享 <strong>60 天优先 PoC 合作窗口</strong></li>
+<li>📢 年会现场展示 + 官方媒体报道</li>
+</ul>
+<hr>
+<h2>七、设备与技术支持</h2>
+<h3>7.1 设备借用</h3>
+<ul>
+<li>入选队伍每队借用 <strong>1 台 AI Box</strong></li>
+<li>顺丰保价<strong>包邮</strong>寄送（双程）</li>
+<li>使用范围仅限本赛事开发</li>
+<li>详见《设备借用协议》</li>
+</ul>
+<h3>7.2 技术支持渠道</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>渠道</th>
+<th>形式</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>开发者群</td>
+<td>飞书/企微群，工作日 24h 内响应</td>
+</tr>
+<tr>
+<td>Office Hour</td>
+<td>每周三固定线上答疑</td>
+</tr>
+<tr>
+<td>GitHub Issues</td>
+<td>SDK Bug 报告与功能请求</td>
+</tr>
+<tr>
+<td>训练营</td>
+<td>3 场（2 线上 + 1 线下）</td>
+</tr>
+</tbody></table></div>
+<h3>7.3 技术文档</h3>
+<ul>
+<li><strong>Quickstart</strong>：开箱 → 连接 → 跑通第一个 Demo</li>
+<li><strong>SDK API 参考</strong>：全量接口文档 + 代码示例</li>
+<li><strong>场景教程</strong>：RAG / 语音 / 视觉 / 多模态 各一篇</li>
+<li><strong>FAQ</strong>：持续更新的常见问题集</li>
+</ul>
+<hr>
+<h2>八、提交要求</h2>
+<h3>8.1 半决赛提交物（7 月上旬截止）</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>提交物</th>
+<th>要求</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>代码仓库</td>
+<td>GitHub，版本锁定（tag/固定分支）</td>
+</tr>
+<tr>
+<td>README</td>
+<td>含 3 步复现指南 + 架构说明 + 技术选型</td>
+</tr>
+<tr>
+<td>演示视频</td>
+<td>≤5 分钟：问题定义→Demo 演示→技术亮点→团队介绍</td>
+</tr>
+<tr>
+<td>测试用例</td>
+<td>≥3 个端到端测试场景 + 结果截图</td>
+</tr>
+<tr>
+<td>路演 PPT</td>
+<td>决赛路演用（初稿）</td>
+</tr>
+</tbody></table></div>
+<h3>8.2 仓库管理</h3>
+<ul>
+<li>开发期：<strong>默认私有</strong>（评委/导师可见）</li>
+<li>赛后：<strong>统一转为公开</strong>（获奖公示后 1-2 周）</li>
+<li>不愿公开的团队可申请保持私有，但需提交可复现 Demo 包</li>
+</ul>
+<hr>
+<h2>九、知识产权</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>条款</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>作品归属</td>
+<td><strong>归参赛团队所有</strong></td>
+</tr>
+<tr>
+<td>赛事授权</td>
+<td>主办/赞助方获得非独占授权，用于评审、展示、传播</td>
+</tr>
+<tr>
+<td>开源要求</td>
+<td><strong>不强制开源</strong></td>
+</tr>
+<tr>
+<td>优先合作</td>
+<td>赛后 60 天内，主办/赞助方享有优先投资、PoC 合作权</td>
+</tr>
+</tbody></table></div>
+<blockquote>详见《参赛协议》。</blockquote>
+<hr>
+<h2>十、FAQ</h2>
+<h3>报名相关</h3>
+<p><strong>Q：我不是交大学生，可以参赛吗？</strong></p>
+<p>A：可以。本赛事面向全国高校学生和自由个人开发者，不限学校、不限地域。</p>
+<p><strong>Q：可以一个人参赛吗？</strong></p>
+<p>A：可以。团队规模 1-4 人均可。</p>
+<p><strong>Q：可以同时报多个赛道吗？</strong></p>
+<p>A：一个团队只能报名一个赛道。</p>
+<h3>技术相关</h3>
+<p><strong>Q：没有 AI Box 设备怎么开始开发？</strong></p>
+<p>A：报名第一轮不需要设备。通过预热任务筛选后，我们会寄送 AI Box。SDK 也提供模拟环境/Docker 方案供前期开发。</p>
+<p><strong>Q：可以使用云端 API 吗？</strong></p>
+<p>A：可以辅助使用，但作品的核心功能必须能在 AI Box 端侧运行。端侧优势（隐私/低延迟/离线）是评审加分项。</p>
+<p><strong>Q：AI 辅助编程可以用吗？</strong></p>
+<p>A：鼓励使用。需在 README 中披露工具名称，代码需可复现、可解释，并遵守开源协议。</p>
+<h3>比赛相关</h3>
+<p><strong>Q：决赛需要到现场吗？</strong></p>
+<p>A：是的。决赛在虹桥国展中心（上海交大机器人年会主会场）进行现场路演。</p>
+<p><strong>Q：奖金怎么发？</strong></p>
+<p>A：奖金为税前金额，由主办方代扣 20% 个人所得税后银行转账发放。颁奖后 30 天内到账。</p>
+<hr>
+<h2>十一、联系方式</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>事项</th>
+<th>联系方式</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>赛事官网</td>
+<td><code>（待上线）</code></td>
+</tr>
+<tr>
+<td>报名入口</td>
+<td><code>（待上线）</code></td>
+</tr>
+<tr>
+<td>赛事咨询</td>
+<td><code>boxcraft2026@（待定）</code></td>
+</tr>
+<tr>
+<td>技术支持群</td>
+<td><code>（设备发放后邀请加入）</code></td>
+</tr>
+</tbody></table></div>
+<hr>
+<blockquote><strong>BoxCraft 2026——让 AI Agent 走出对话框，连接真实世界。</strong></blockquote>
+<p>></p>
+<blockquote>期待你的加入。</blockquote>
+</div>
+<div class="doc-section" id="section-tracks">
+<h1>🧩 赛道与命题</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、赛道总览（3+1 结构）</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>赛道</th>
+<th>方向</th>
+<th>类型</th>
+<th>定位</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>A：企业端侧 Agent</strong></td>
+<td>智能导购 / 工业 SOP 诊断 / 销售合规助手</td>
+<td>命题</td>
+<td>当下落点，48 TOPS 完全够用</td>
+</tr>
+<tr>
+<td><strong>B：端侧感知与交互</strong></td>
+<td>多模态交互、语音/图像理解、人机协作</td>
+<td>命题</td>
+<td>桥梁，连接 Agent 与物理世界</td>
+</tr>
+<tr>
+<td><strong>C：AI Box 底座能力</strong></td>
+<td>插件系统 / 多 Agent 编排</td>
+<td>命题</td>
+<td>平台化能力验证</td>
+</tr>
+<tr>
+<td><strong>D：自由创新</strong></td>
+<td>不限，机器人/具身方向可设专项奖</td>
+<td>开放</td>
+<td>未来窗口，鼓励探索</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>二、赛道 A 具体命题</h2>
+<blockquote>已选定 3 个命题方向，均突出 AI Box 端侧优势（隐私/低延迟/离线）。</blockquote>
+<h3>A2：智能客服/导购 Agent</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>零售/电商场景：基于商品信息和用户意图，做推荐、答疑、下单引导</td>
+</tr>
+<tr>
+<td><strong>端侧优势</strong></td>
+<td>低延迟交互、个性化推荐不依赖云端、门店离线可用</td>
+</tr>
+<tr>
+<td><strong>验收标准</strong></td>
+<td>多轮对话完成至少 3 个完整导购场景（浏览-咨询-推荐-下单引导）</td>
+</tr>
+<tr>
+<td><strong>样例数据</strong></td>
+<td>🔴 待祥承提供脱敏商品数据（商品目录/规格/FAQ）</td>
+</tr>
+</tbody></table></div>
+<h3>A3：工业 SOP 诊断助手</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>设备故障排查/维保流程引导：输入故障描述，按 SOP 逐步引导操作员排查</td>
+</tr>
+<tr>
+<td><strong>端侧优势</strong></td>
+<td>离线可用（车间/工厂网络差）、低延迟、数据不出产线</td>
+</tr>
+<tr>
+<td><strong>验收标准</strong></td>
+<td>完成至少 5 个故障场景的端到端排查流程（故障描述→诊断→步骤引导→结果记录）</td>
+</tr>
+<tr>
+<td><strong>样例数据</strong></td>
+<td>🔴 待祥承提供脱敏 SOP 文档和故障工单样本</td>
+</tr>
+</tbody></table></div>
+<h3>A4：销售话术/合规助手</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>销售现场实时提供话术建议、合规检查（如金融/保险销售的话术红线提醒）</td>
+</tr>
+<tr>
+<td><strong>端侧优势</strong></td>
+<td>实时性（销售现场秒级响应）、隐私（客户信息不上云）</td>
+</tr>
+<tr>
+<td><strong>验收标准</strong></td>
+<td>模拟对话场景中能实时给出合规提示和话术建议</td>
+</tr>
+<tr>
+<td><strong>样例数据</strong></td>
+<td>🔴 待祥承提供脱敏的合规规则库和话术模板</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>三、赛道 B 命题细节</h2>
+<blockquote>假定 SDK 对摄像头和语音模块的支持<strong>已到位</strong>。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>子方向</th>
+<th>支持的外设/模块</th>
+<th>可能的命题示例</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>视觉感知</strong></td>
+<td>USB/CSI 摄像头、深度相机等</td>
+<td>端侧物体识别与分拣助手、门店客流统计、货架合规巡检</td>
+</tr>
+<tr>
+<td><strong>语音交互</strong></td>
+<td>麦克风阵列、扬声器模组等</td>
+<td>离线语音对话 Agent、端侧声纹识别门禁、多语言实时翻译</td>
+</tr>
+<tr>
+<td><strong>多模态融合</strong></td>
+<td>视觉 + 语音 + 文本联合交互</td>
+<td>智能前台（刷脸+语音+工单联动）、无障碍辅助助手</td>
+</tr>
+</tbody></table></div>
+<blockquote>命题文档中需明确：SDK 支持的模组型号清单、接口规范、最小可运行示例，以及当模组不可用时的兜底方案（如模拟数据输入）。</blockquote>
+<hr>
+<h2>四、赛道 C 具体命题</h2>
+<blockquote>侧重 AI Box 的平台化能力和生态价值。</blockquote>
+<h3>C1：插件系统/技能扩展</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>为 AI Box 开发可复用的 Agent 插件（如天气/日历/文件搜索/数据库查询），并设计标准化插件接口</td>
+</tr>
+<tr>
+<td><strong>验收标准</strong></td>
+<td>插件可独立安装/卸载、有标准化接口规范、可被其他 Agent 调用、附带开发文档</td>
+</tr>
+<tr>
+<td><strong>生态价值</strong></td>
+<td>获奖作品可直接沉淀为 SDK 的插件生态组成部分</td>
+</tr>
+</tbody></table></div>
+<h3>C2：多 Agent 编排引擎</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>实现轻量级多 Agent 协作框架：定义任务→拆分子任务→分配给不同 Agent→汇总结果</td>
+</tr>
+<tr>
+<td><strong>验收标准</strong></td>
+<td>至少 3 个 Agent 协作完成 1 个复杂任务（如：信息收集+分析+报告生成）</td>
+</tr>
+<tr>
+<td><strong>生态价值</strong></td>
+<td>编排引擎是 AI Box 作为"Agent 底座"的核心能力，获奖方案可直接参考产品化</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>五、赛道 D 开放赛道方向包</h2>
+<blockquote>开放赛道仍要求"真实需求"，但提供方向包避免无边界发散，便于评审横向比较。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>方向</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>行业一线提效</strong></td>
+<td>零售/连锁门店/仓储物流等的本地智能助手</td>
+</tr>
+<tr>
+<td><strong>安全与合规</strong></td>
+<td>隐私敏感场景的端侧智能（本地检索/推理/审计）</td>
+</tr>
+<tr>
+<td><strong>公共服务/社会价值</strong></td>
+<td>养老/无障碍/应急科普/教育辅助（可用性优先）</td>
+</tr>
+<tr>
+<td><strong>端侧多模态</strong></td>
+<td>语音/图像/文本结合的现场交互（强调低延迟与离线兜底）</td>
+</tr>
+<tr>
+<td><strong>"盒子即平台"扩展</strong></td>
+<td>开发者工具、模型管理、可观测性</td>
+</tr>
+<tr>
+<td><strong>端云协同</strong></td>
+<td>在不泄露敏感数据前提下的云端增强（需说明数据策略）</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>六、待祥承提供的命题素材</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>内容</th>
+<th>说明</th>
+<th>用途</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>真实客户场景素材</strong></td>
+<td>基于祥承实际客户需求脱敏后的场景描述</td>
+<td>让命题更贴合真实行业痛点</td>
+</tr>
+<tr>
+<td><strong>脱敏样例数据</strong></td>
+<td>商品数据/SOP 文档/故障工单/合规规则库等</td>
+<td>提供给参赛者作为开发素材</td>
+</tr>
+<tr>
+<td><strong>SDK 插件接口文档</strong></td>
+<td>现有的插件/扩展机制说明</td>
+<td>赛道 C 参赛者的开发依据</td>
+</tr>
+</tbody></table></div>
+</div>
+<div class="doc-section" id="section-timeline">
+<h1>📅 时间线与赛程</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、总时间线（3 月筹备 → 4 月报名 → 7 月决赛）</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>月份</th>
+<th>阶段</th>
+<th>核心动作</th>
+<th>关键交付</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>3 月</strong></td>
+<td>筹备</td>
+<td>方案定稿 / SDK 就绪评估 / 赛事手册 / 组委会组建</td>
+<td>母文档 v3.0、赛事手册骨架</td>
+</tr>
+<tr>
+<td><strong>4 月</strong></td>
+<td>启动</td>
+<td><strong>报名开放</strong> / 联合发布 / 首轮传播 / 设备池准备</td>
+<td>报名页、宣发包、设备物流计划</td>
+</tr>
+<tr>
+<td><strong>5 月</strong></td>
+<td>赋能</td>
+<td><strong>训练营 #1 + #2</strong> / SDK 发放 / 设备发放 / 社群建立</td>
+<td>SDK 文档、样例库、开发者群</td>
+</tr>
+<tr>
+<td><strong>6 月</strong></td>
+<td>开发</td>
+<td>训练营 #3（进阶）/ 中期检查 / Office Hour 持续答疑</td>
+<td>中期报告、僵尸队清退、FAQ</td>
+</tr>
+<tr>
+<td><strong>7 月上</strong></td>
+<td>收官</td>
+<td><strong>作品提交截止</strong> / L1 review / 半决赛（线上）</td>
+<td>入围名单、决赛通知</td>
+</tr>
+<tr>
+<td><strong>7 月底</strong></td>
+<td>决赛</td>
+<td><strong>年会决赛路演 + 颁奖 + 产品发布</strong></td>
+<td>获奖名单、现场素材</td>
+</tr>
+<tr>
+<td><strong>8 月</strong></td>
+<td>转化</td>
+<td>赛后复盘 / PoC 对接 / 人才跟进 / 内容沉淀</td>
+<td>复盘报告、转化计划</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>二、年会决赛日程</h2>
+<h3>基本参数</h3>
+<ul>
+<li><strong>场地</strong>：虹桥国展中心金色大厅</li>
+<li><strong>时长</strong>：~3.5 小时</li>
+<li><strong>决赛队伍</strong>：8 队</li>
+<li><strong>决赛形式</strong>：模式 B + 一点 C（成果路演 + 实机 Demo + 评委追问）</li>
+</ul>
+<h3>日程草案</h3>
+<pre><code>
+14:00 - 14:15  开幕（主持人 + 嘉宾致辞）
+
+
+14:15 - 14:30  AI Box 主题演讲（祥承，15min）
+
+
+               · 产品介绍 + 赛事回顾 + 400 TOPS 路线图
+
+
+14:30 - 16:10  决赛路演（8队 × 12min = 96min）
+
+
+               · 每队：8min 路演(含实机Demo) + 4min 评委追问
+
+
+16:10 - 16:20  茶歇 + 评委合议
+
+
+16:20 - 16:40  评委点评 / 圆桌 / 专家对话（可选）
+
+
+16:40 - 17:00  颁奖典礼（院士/行业专家颁奖 → 合影）
+
+
+17:00 - 17:30  自由交流 + AI Box 体验展示区
+
+
+</code></pre>
+<h3>年会主题演讲（15 分钟）</h3>
+<ul>
+<li><strong>演讲人选</strong>：祥承<strong>技术负责人</strong>（CTO 或技术总监）</li>
+<li><strong>内容定位</strong>：兼顾技术深度与<strong>生态共建宣传</strong></li>
+</ul>
+<pre><code>
+[1min]  开场：为什么需要端侧 AI？
+
+
+[3min]  AI Box 产品：48 TOPS / 三层架构 / 即插即用
+
+
+[2min]  赛事成果：精选 3-4 个作品（视频/数据）
+
+
+[3min]  ★ 生态共建：开发者社区 / SDK 开放 / 合作伙伴生态
+
+
+[3min]  ★ 路线图：400 TOPS / 具身智能端侧大脑
+
+
+[2min]  合作伙伴致谢 + 号召：加入 AI Box 开发者生态
+
+
+[1min]  收官
+
+
+</code></pre>
+<blockquote>演讲核心逻辑：<strong>产品能力 → 赛事验证 → 生态共建 → 未来路线图</strong></blockquote>
+<hr>
+<h2>三、半决赛评审流程（年会前一周，线上）</h2>
+<h3>提交物</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>提交物</th>
+<th>要求</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>项目文档</strong></td>
+<td>README（含 3 步复现）+ 架构说明 + 技术选型</td>
+</tr>
+<tr>
+<td><strong>代码仓库</strong></td>
+<td>版本锁定（tag/固定分支），评委/导师可见</td>
+</tr>
+<tr>
+<td><strong>演示视频</strong></td>
+<td>5 分钟以内，含：问题定义 - Demo 演示 - 技术亮点 - 团队介绍</td>
+</tr>
+<tr>
+<td><strong>测试环境</strong></td>
+<td>可复现的运行环境说明</td>
+</tr>
+<tr>
+<td><strong>测试用例</strong></td>
+<td>至少 3 个端到端测试场景 + 结果截图/日志</td>
+</tr>
+<tr>
+<td><strong>路演 PPT</strong></td>
+<td>决赛路演用 PPT 初稿</td>
+</tr>
+</tbody></table></div>
+<h3>评审节点</h3>
+<pre><code>
+D-10  提交截止
+
+
+D-9   技术组 L1 合规检查（全量，每队 10-15 分钟）
+
+
+D-8   技术组 L2 复现抽查（重点队伍，每队 20-40 分钟）
+
+
+D-7   评委异步打分（基于视频 + 文档 + 仓库）
+
+
+D-6   评委合议 / 分差裁定
+
+
+D-5   公布 TOP 8 入围名单
+
+
+D-4   决赛彩排通知
+
+
+</code></pre>
+<hr>
+<h2>四、中期检查与僵尸队清退</h2>
+<h3>时间：6 月中（D-30 附近）</h3>
+<h3>僵尸队判定标准（满足任一即可）</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>标准</th>
+<th>具体说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>无代码提交</strong></td>
+<td>自设备发放后，代码仓库无任何有意义的 commit</td>
+</tr>
+<tr>
+<td><strong>未参加 Office Hour</strong></td>
+<td>未参加任何一次官方线上答疑会议</td>
+</tr>
+<tr>
+<td><strong>失联</strong></td>
+<td>队长连续 2 周未回复官方联系</td>
+</tr>
+</tbody></table></div>
+<h3>清退流程</h3>
+<pre><code>
+1. 中期检查时标记疑似僵尸队
+
+
+2. 发送正式通知（给 3 天缓冲期回复/补交进度）
+
+
+3. 缓冲期后仍无响应 → 正式清退，通知归还设备
+
+
+4. 设备回收后，分配给候补队或校内共享池
+
+
+</code></pre>
+</div>
+<div class="doc-section" id="section-review">
+<h1>🤖 评审机制</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、评审团组成</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>来源</th>
+<th>人数</th>
+<th>定位</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>学术评委</strong></td>
+<td>上海交大机器人所/AI 学院教授</td>
+<td>2-3 人</td>
+<td>技术深度与创新性把关</td>
+</tr>
+<tr>
+<td><strong>产业评委</strong></td>
+<td>祥承科技（CTO/技术总监）</td>
+<td>2 人</td>
+<td>产品化与商业化视角</td>
+</tr>
+<tr>
+<td><strong>行业专家</strong></td>
+<td>联发科/AI 行业代表</td>
+<td>1-2 人</td>
+<td>行业落地与生态适配</td>
+</tr>
+<tr>
+<td><strong>投资人评委</strong></td>
+<td>VC/天使投资人</td>
+<td>1 人</td>
+<td>商业潜力与市场价值判断</td>
+</tr>
+</tbody></table></div>
+<blockquote>技术导师（祥承工程师）默认不担任评委。如个别导师兼任评委，需设置回避机制。</blockquote>
+<hr>
+<h2>二、评审维度与权重</h2>
+<blockquote>维度排序：<strong>创新性 > 商业价值 > 完成度 > 技术深度 > AI Box 适配度</strong></blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>维度</th>
+<th>权重</th>
+<th>评审关注点</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>创新性</strong></td>
+<td><strong>25%</strong></td>
+<td>Agent 方案原创性、差异化亮点、技术路线新颖度、方法突破</td>
+</tr>
+<tr>
+<td><strong>商业价值与影响</strong></td>
+<td><strong>25%</strong></td>
+<td>真实痛点与目标用户清晰；价值可量化；落地/推广/商业化路径清楚</td>
+</tr>
+<tr>
+<td><strong>完成度与可用性</strong></td>
+<td><strong>20%</strong></td>
+<td>Demo 端到端可用与稳定；交互清晰；答辩能讲清"为何有效/如何实现"</td>
+</tr>
+<tr>
+<td><strong>技术深度</strong></td>
+<td><strong>15%</strong></td>
+<td>工程结构合理、依赖清晰、可复现、离线兜底、合规披露齐全</td>
+</tr>
+<tr>
+<td><strong>AI Box 适配度</strong></td>
+<td><strong>15%</strong></td>
+<td>体现端侧优势（隐私/低延迟/离线/端云协同/外设）与赛道契合</td>
+</tr>
+</tbody></table></div>
+<blockquote>对学生团队不要求写完整商业计划书。回答四个问题即可：<strong>给谁用、解决什么、带来什么提升、怎么部署/推广</strong>。</blockquote>
+<hr>
+<h2>三、Rubric 评分锚点</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>维度</th>
+<th>1 分（不足）</th>
+<th>3 分（达标）</th>
+<th>5 分（优秀）</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>创新性</td>
+<td>套壳/轻微改动</td>
+<td>有明确亮点</td>
+<td>有明显突破且可解释</td>
+</tr>
+<tr>
+<td>商业价值</td>
+<td>痛点泛泛，用户不清</td>
+<td>场景具体、价值可量化</td>
+<td>有验证迹象或可复制路径</td>
+</tr>
+<tr>
+<td>完成度</td>
+<td>只能"演"，不稳定</td>
+<td>端到端可跑通</td>
+<td>体验顺滑且答辩可解释</td>
+</tr>
+<tr>
+<td>技术深度</td>
+<td>不可复现/依赖混乱</td>
+<td>按 README 可复现</td>
+<td>低成本复现+离线兜底</td>
+</tr>
+<tr>
+<td>AI Box 适配</td>
+<td>未体现端侧优势</td>
+<td>Box 环境可跑通</td>
+<td>端侧优势显著并有优化证据</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>四、硬门槛（不满足即淘汰）</h2>
+<ul>
+<li>能在 AI Box 或官方模拟环境跑通，并提供清晰复现步骤</li>
+<li>不触碰敏感数据；不得提交密钥/账号</li>
+<li>提交物齐全（README/视频/PPT/仓库），且版本已锁定</li>
+</ul>
+<hr>
+<h2>五、院士/专家颁奖嘉宾（待落实）</h2>
+<blockquote>最终在决赛前 2-4 周确认。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>候选人方向</th>
+<th>备注</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>颁奖嘉宾（学术）</td>
+<td>交大 AI/机器人领域院士或资深教授</td>
+<td>冠军颁奖</td>
+</tr>
+<tr>
+<td>颁奖嘉宾（行业）</td>
+<td>联发科高层 / AI 行业知名人物</td>
+<td>亚军或专项奖</td>
+</tr>
+<tr>
+<td>颁奖嘉宾（政府）</td>
+<td>海安经开区/地方政府代表</td>
+<td>季军或特别奖</td>
+</tr>
+<tr>
+<td>颁奖嘉宾（投资）</td>
+<td>合作 VC / 人工智能协会代表</td>
+<td>最具商业潜力奖</td>
+</tr>
+</tbody></table></div>
+</div>
+<div class="doc-section" id="section-registration">
+<h1>📝 报名与参赛</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、参赛资格</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>规则</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>参赛对象</strong></td>
+<td>① 在校学生（本科/硕士/博士，不限学校）② 自由个人开发者。<strong>不接受企业参赛</strong></td>
+</tr>
+<tr>
+<td><strong>团队规模</strong></td>
+<td>1-4 人/队，需指定 1 名队长</td>
+</tr>
+<tr>
+<td><strong>跨校组队</strong></td>
+<td>允许（鼓励跨院系/跨校/跨学科）</td>
+</tr>
+<tr>
+<td><strong>地域限制</strong></td>
+<td>无（设备覆盖以长三角为主，但不限报名地域）</td>
+</tr>
+</tbody></table></div>
+<blockquote>开放自由个人开发者可以扩大参赛池、增加作品多样性、提升整体水平、体现"开放生态"定位。</blockquote>
+<hr>
+<h2>二、报名审核标准</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>审核维度</th>
+<th>权重</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>方向可行性</strong></td>
+<td>40%</td>
+<td>选题是否真实可做？是否能在 AI Box 上实现？</td>
+</tr>
+<tr>
+<td><strong>团队匹配度</strong></td>
+<td>30%</td>
+<td>成员技能是否覆盖开发需求？是否有相关经验？</td>
+</tr>
+<tr>
+<td><strong>方案创新性</strong></td>
+<td>30%</td>
+<td>初步思路是否有差异化？不需要完整方案，但需看到独立思考</td>
+</tr>
+</tbody></table></div>
+<h3>报名材料</h3>
+<ol>
+<li><strong>报名表</strong>：团队信息、成员简介（含技术背景）</li>
+<li><strong>项目提案</strong>（1-2 页）：选题方向、目标用户、初步方案思路、预期使用 AI Box 的方式</li>
+<li><strong>队长身份证明</strong>：学生证/在校证明（学生）或身份证（个人开发者）</li>
+</ol>
+<hr>
+<h2>三、预赛团队评估方案（混合制）</h2>
+<blockquote>已确认采用<strong>混合制</strong>：第一轮提案快筛 → 第二轮轻量技术验证。</blockquote>
+<h3>流程设计</h3>
+<pre><code>
+第一轮（4 月，纯线上）：提案评审
+
+
+  |-- 团队提交：报名表 + 项目提案（1-2 页）
+
+
+  |-- 评审标准：方向可行性 40% + 团队匹配度 30% + 创新性 30%
+
+
+  |-- 结果：从全部报名队中选出 35-40 支进入第二轮
+
+
+  +-- 周期：约 1 周
+
+
+
+
+
+第二轮（4 月底 - 5 月初）：预热任务
+
+
+  |-- 发布 2-3 个轻量任务（可在模拟环境/Docker 完成）
+
+
+  |   例如：
+
+
+  |   - 任务 1：跑通官方 SDK Demo，提交运行截图 + 环境配置文档
+
+
+  |   - 任务 2：基于样例数据做一个最小 RAG 应用，提交代码 + 简要测试报告
+
+
+  |   - 任务 3：撰写方案细化文档（架构图 + 技术选型 + 里程碑）
+
+
+  |-- 评审标准：完成度 50% + 代码/文档质量 30% + 响应速度 20%
+
+
+  |-- 结果：从 35-40 支中选出 25 支，发放设备
+
+
+  +-- 周期：约 1-2 周
+
+
+</code></pre>
+<h3>关键前提（需祥承确认）</h3>
+<ol>
+<li>SDK 是否有 PC 端模拟运行模式？</li>
+<li>预热任务由谁出题？建议祥承 Tech Lead 出 1-2 个轻量任务</li>
+<li>评审分工：第一轮 2-3 人快审；第二轮需技术人员参与</li>
+</ol>
+<hr>
+<h2>四、高校触达与招募策略</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>渠道</th>
+<th>行动</th>
+<th>负责方</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>海报投放</strong></td>
+<td>主视觉海报 → 各校 CS 学院公告栏/宿舍楼</td>
+<td>PR + 交大志愿者</td>
+</tr>
+<tr>
+<td><strong>校园宣讲</strong></td>
+<td>交大、复旦、同济等核心高校 30min 闪电宣讲</td>
+<td>Tech Lead + 交大导师</td>
+</tr>
+<tr>
+<td><strong>社团合作</strong></td>
+<td>各校 ACM/AI 社团/机器人社团定向推广</td>
+<td>Ops</td>
+</tr>
+<tr>
+<td><strong>高校 BBS</strong></td>
+<td>水木社区、日月光华、饮水思源等</td>
+<td>PR</td>
+</tr>
+<tr>
+<td><strong>导师推荐</strong></td>
+<td>交大机器人所导师推荐</td>
+<td>交大侧</td>
+</tr>
+<tr>
+<td><strong>企业渠道</strong></td>
+<td>联发科高校合作渠道</td>
+<td>BD + 联发科</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>五、报名系统推荐</h2>
+<h3>推荐方案：金数据 + 赛事官网</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>方案</th>
+<th>平台</th>
+<th>优点</th>
+<th>缺点</th>
+<th>推荐度</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>A：金数据</strong></td>
+<td>jinshuju.net</td>
+<td>多步表单、条件逻辑、数据导出</td>
+<td>专业版 599/年</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td><strong>B：飞书多维表格</strong></td>
+<td>飞书</td>
+<td>无缝集成</td>
+<td>外部用户需飞书账号</td>
+<td>★★★★</td>
+</tr>
+<tr>
+<td><strong>C：Tally</strong></td>
+<td>tally.so</td>
+<td>类 Notion 风格</td>
+<td>国内访问不确定</td>
+<td>★★★</td>
+</tr>
+</tbody></table></div>
+<p>使用方式：赛事官网（静态页面）展示活动信息 → 报名按钮跳转金数据表单 → 分步填写。</p>
+</div>
+<div class="doc-section" id="section-equipment">
+<h1>📦 设备管理</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、设备池总量与分配</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>类别</th>
+<th>数量</th>
+<th>用途</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>参赛开发用</td>
+<td>25 台</td>
+<td>入选团队开发借用</td>
+</tr>
+<tr>
+<td>备机</td>
+<td>3 台</td>
+<td>替换故障/损坏设备</td>
+</tr>
+<tr>
+<td>决赛现场备用</td>
+<td>2 台</td>
+<td>路演现场应急</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>30 台</strong></td>
+<td></td>
+</tr>
+</tbody></table></div>
+<h2>二、覆盖范围</h2>
+<ul>
+<li><strong>主要覆盖</strong>：长三角地区（上海、浙江、江苏、安徽）</li>
+<li><strong>物流方式</strong>：顺丰保价，<strong>包邮</strong>（双程）</li>
+<li>非长三角团队如有特殊需求，可协商解决</li>
+</ul>
+<h2>三、发放流程</h2>
+<pre><code>
+阶段 1：开放报名（4 月）→ 团队提交报名表 + 项目提案
+
+
+阶段 2：第一轮筛选（4 月中）→ 提案评审，选出 35-40 支进入第二轮
+
+
+阶段 3：第二轮筛选（4 月底 - 5 月初）→ 轻量预热任务（SDK Demo + 方案细化），选出 25 支
+
+
+阶段 4：签署协议 &amp; 设备发放（5 月初）→ 顺丰保价发送
+
+
+阶段 5：开发期（5-6 月）→ 中期检查，僵尸队清退回收
+
+
+阶段 6：设备回收（7 月中 - 赛后）
+
+
+  → 未入围队：半决赛后 7 天内寄回
+
+
+  → 决赛队：决赛现场统一回收
+
+
+  → 获奖队（冠/亚军）：设备赠送，无需归还
+
+
+</code></pre>
+<h2>四、报名超过 30 支的应对</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>方案</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>分批发放</strong></td>
+<td>第一批 25 队；中期清退后释放的设备分配给候补队</td>
+</tr>
+<tr>
+<td><strong>远程模拟环境</strong></td>
+<td>提供 AI Box 云端模拟器/Docker 镜像</td>
+</tr>
+<tr>
+<td><strong>校内共享</strong></td>
+<td>同校多队可协商共享设备（分时使用）</td>
+</tr>
+</tbody></table></div>
+<h2>五、设备借用协议要点</h2>
+<ul>
+<li>借用期限：从发放日至赛事结束后 7 天</li>
+<li>设备归属：祥承科技所有</li>
+<li>使用范围：仅限 BoxCraft 2026 赛事开发</li>
+<li>损坏/丢失：正常磨损不追究；人为损坏按成本价 50% 赔偿；丢失/拒还按全额赔偿</li>
+<li>禁止行为：拆机、转借、商用</li>
+</ul>
+</div>
+<div class="doc-section" id="section-bootcamp">
+<h1>🎓 训练营计划</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、基本安排</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>场次</th>
+<th>时间</th>
+<th>形式</th>
+<th>主题</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>训练营 #1</strong></td>
+<td>5 月中（D-45）</td>
+<td><strong>线上</strong></td>
+<td>SDK 入门 + AI Box 快速上手 + RAG 模板走读</td>
+</tr>
+<tr>
+<td><strong>训练营 #2</strong></td>
+<td>6 月初（D-30）</td>
+<td><strong>线上</strong></td>
+<td>多模态交互开发 + 工业场景接入 + 最佳实践</td>
+</tr>
+<tr>
+<td><strong>训练营 #3</strong></td>
+<td>6 月中下旬</td>
+<td><strong>线下</strong></td>
+<td>进阶：性能优化 + 端云协同 + 答辩技巧</td>
+</tr>
+</tbody></table></div>
+<h2>二、讲师安排</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>角色</th>
+<th>人选</th>
+<th>负责内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>主讲</strong></td>
+<td>祥承高级工程师（2-3 人）</td>
+<td>SDK 架构/接口/部署/调优</td>
+</tr>
+<tr>
+<td><strong>特邀</strong></td>
+<td>外部大咖（AI/Agent 领域专家，1-2 人）</td>
+<td>行业趋势分享、技术前瞻</td>
+</tr>
+<tr>
+<td><strong>助教</strong></td>
+<td>祥承初中级工程师</td>
+<td>环境搭建答疑、Demo 复现带练</td>
+</tr>
+<tr>
+<td><strong>学术引导</strong></td>
+<td>交大导师（可选）</td>
+<td>课题方向引导、技术论文推荐</td>
+</tr>
+</tbody></table></div>
+<h2>三、配套教程与文档体系</h2>
+<blockquote>建议建立飞书知识库，统一承载所有技术文档。</blockquote>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>文档类别</th>
+<th>内容</th>
+<th>交付时间</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Quickstart</strong></td>
+<td>开箱 → 连接 → 跑通第一个 Demo（3 步）</td>
+<td>训练营 #1 前</td>
+</tr>
+<tr>
+<td><strong>SDK API 参考</strong></td>
+<td>全量 API 文档 + 代码示例</td>
+<td>训练营 #1 前</td>
+</tr>
+<tr>
+<td><strong>场景教程</strong></td>
+<td>RAG/语音/视觉/多模态 各一篇端到端教程</td>
+<td>训练营 #1-#2 同步</td>
+</tr>
+<tr>
+<td><strong>FAQ</strong></td>
+<td>持续更新的常见问题集</td>
+<td>持续维护</td>
+</tr>
+<tr>
+<td><strong>进阶指南</strong></td>
+<td>性能优化、离线部署、端云协同</td>
+<td>训练营 #3 前</td>
+</tr>
+<tr>
+<td><strong>训练营录播</strong></td>
+<td>每次训练营的完整录播 + PPT</td>
+<td>课后 3 天内</td>
+</tr>
+</tbody></table></div>
+</div>
+<div class="doc-section" id="section-ip">
+<h1>📜 IP 与知识产权</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、知识产权归属</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>条款</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>作品 IP 归属</strong></td>
+<td>作品知识产权（含代码/文档/素材等）<strong>默认归参赛团队所有</strong></td>
+</tr>
+<tr>
+<td><strong>赛事授权</strong></td>
+<td>主办/赞助方获得<strong>非独占、合理期限</strong>的使用授权，仅用于：评审、展示、赛事传播</td>
+</tr>
+<tr>
+<td><strong>开源要求</strong></td>
+<td><strong>不强制开源</strong>；鼓励但不要求公开代码</td>
+</tr>
+<tr>
+<td><strong>最小交付</strong></td>
+<td>即使不开源，也需提交可复现 Demo 包 + 作品说明 + 演示视频</td>
+</tr>
+</tbody></table></div>
+<h2>二、主办方优先权益</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>权益</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>优先投资/合作窗口</strong></td>
+<td>赛后 <strong>60 天</strong>内，主办/赞助方享有优先投资、PoC 合作、许可/收购谈判的权利</td>
+</tr>
+<tr>
+<td><strong>优先沟通</strong></td>
+<td>窗口期内，参赛团队如收到第三方意向，需优先通知主办方</td>
+</tr>
+<tr>
+<td><strong>窗口期后</strong></td>
+<td>60 天结束后，团队自由处置，不设任何限制</td>
+</tr>
+</tbody></table></div>
+<blockquote>60 天足够完成初步对接，且对参赛者友好。</blockquote>
+<h2>三、仓库公开策略</h2>
+<blockquote><strong>决策：赛后统一公开</strong></blockquote>
+<ul>
+<li>开发期：默认私有（评委/导师可见）</li>
+<li>半决赛/决赛：仍保持私有</li>
+<li><strong>赛后</strong>：统一转为公开（获奖公示后 1-2 周内）</li>
+<li>不愿公开的团队：可申请保持私有，但需提交可复现 Demo 包供展示</li>
+</ul>
+<p>理由：赛后公开更防抄袭、减少参赛者压力，且合规检查可在公开前完成。</p>
+</div>
+<div class="doc-section" id="section-promotion">
+<h1>📢 宣发与传播</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、线上渠道矩阵</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>渠道</th>
+<th>平台</th>
+<th>内容形式</th>
+<th>发布节奏</th>
+<th>负责</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>官方公众号</strong></td>
+<td>微信（祥承 + 交大联合）</td>
+<td>赛事发布/训练营回顾/参赛者故事</td>
+<td>每周 1-2 篇</td>
+<td>PR</td>
+</tr>
+<tr>
+<td><strong>技术公众号</strong></td>
+<td>机器之心/量子位/AI 前线等</td>
+<td>联合发文/采访稿</td>
+<td>关键节点 3-5 篇</td>
+<td>PR + BD</td>
+</tr>
+<tr>
+<td><strong>开发者社区</strong></td>
+<td>CSDN / 掘金 / SegmentFault / V2EX / 知乎</td>
+<td>技术文章/AMA/话题讨论</td>
+<td>报名期集中推</td>
+<td>Tech + PR</td>
+</tr>
+<tr>
+<td><strong>官网</strong></td>
+<td>BoxCraft 赛事专属页面</td>
+<td>赛事信息/报名入口/FAQ/倒计时</td>
+<td>持续更新</td>
+<td>Ops + Tech</td>
+</tr>
+<tr>
+<td><strong>视频</strong></td>
+<td>B 站 / 抖音 / 视频号</td>
+<td>30s-3min 短视频</td>
+<td>每周 1 条</td>
+<td>PR</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>官方组织主页</td>
+<td>README 展示/SDK 更新/Star 引流</td>
+<td>持续</td>
+<td>Tech</td>
+</tr>
+<tr>
+<td><strong>小红书</strong></td>
+<td>祥承/AI Box 账号</td>
+<td>图文笔记</td>
+<td>每周 1-2 条</td>
+<td>PR</td>
+</tr>
+</tbody></table></div>
+<h2>二、线下渠道</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>渠道</th>
+<th>行动</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>校园海报</strong></td>
+<td>主视觉海报 + 二维码，投放 10+ 高校</td>
+</tr>
+<tr>
+<td><strong>宣讲会</strong></td>
+<td>3-5 场校园闪电宣讲（交大、复旦、浙大、南大等）</td>
+</tr>
+<tr>
+<td><strong>训练营引流</strong></td>
+<td>训练营本身即传播节点</td>
+</tr>
+<tr>
+<td><strong>年会现场</strong></td>
+<td>决赛路演 + 展台 + 现场素材产出</td>
+</tr>
+</tbody></table></div>
+<h2>三、内容资产生产线</h2>
+<pre><code>
+报名期 → 赛题解读视频 / 产品开箱 / 导师介绍
+
+
+  ↓
+
+
+训练营 → Highlight 视频 / 学员感言 / 技术干货文章
+
+
+  ↓
+
+
+开发期 → 参赛者开发日记 / 进度花絮 / Office Hour 精华
+
+
+  ↓
+
+
+半决赛 → 入围作品短视频 / 评委点评集锦
+
+
+  ↓
+
+
+决赛  → 现场直播回放 / 获奖采访 / 全程纪录片
+
+
+  ↓
+
+
+赛后  → 成果白皮书 / 参赛者故事 / 技术博客系列
+
+
+</code></pre>
+<h2>四、直播方案</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>方案</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>主平台</strong></td>
+<td><strong>B 站</strong>（主）+ <strong>视频号</strong>（辅）+ <strong>抖音</strong>（可选）</td>
+</tr>
+<tr>
+<td><strong>内容</strong></td>
+<td>决赛路演 + 颁奖（3.5 小时完整直播）</td>
+</tr>
+<tr>
+<td><strong>互动</strong></td>
+<td>弹幕互动、抽奖——<strong>不纳入评审</strong></td>
+</tr>
+<tr>
+<td><strong>保障</strong></td>
+<td>双机位 + 导播台 + 备用推流线路</td>
+</tr>
+<tr>
+<td><strong>回放</strong></td>
+<td>剪辑精华版（15-20min），发布至全平台</td>
+</tr>
+</tbody></table></div>
+<h2>五、联合传播审稿机制</h2>
+<h3>对外口径原则</h3>
+<ul>
+<li><strong>赛事全称</strong>：BoxCraft 2026——AI Box 端侧 Agent 开发挑战赛</li>
+<li><strong>主办方表述</strong>：上海交通大学机器人研究所 × 联发科技 × 上海祥承科技</li>
+<li><strong>品牌露出顺序</strong>：交大（学术背书）→ 联发科（平台背书）→ 祥承（技术与赞助）</li>
+</ul>
+<h3>审稿流程</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>内容类型</th>
+<th>审稿流程</th>
+<th>时效</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>日常公众号/社区文章</td>
+<td>撰稿人 → 祥承 PR 审核 → 发布</td>
+<td>24h</td>
+</tr>
+<tr>
+<td>联合品牌物料</td>
+<td>设计稿 → 祥承 + 交大双方审核</td>
+<td>48h</td>
+</tr>
+<tr>
+<td>涉及联发科品牌</td>
+<td>双方审核 → 联发科品牌部确认</td>
+<td>72h</td>
+</tr>
+<tr>
+<td>媒体采访/对外发言</td>
+<td>提前确认发言人和口径</td>
+<td>48h</td>
+</tr>
+</tbody></table></div>
+<h3>发言人安排</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>场景</th>
+<th>发言人</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>赛事整体介绍</td>
+<td>交大赛事负责人（PM）</td>
+</tr>
+<tr>
+<td>技术/产品相关</td>
+<td>祥承技术负责人</td>
+</tr>
+<tr>
+<td>商务合作/赞助</td>
+<td>祥承 BD</td>
+</tr>
+<tr>
+<td>年会主题演讲</td>
+<td>祥承技术负责人</td>
+</tr>
+</tbody></table></div>
+</div>
+<div class="doc-section" id="section-budget">
+<h1>💰 预算与合规</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、总预算框架（~30 万上限）</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>类别</th>
+<th>项目</th>
+<th>估算</th>
+<th>状态</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>奖金</strong></td>
+<td>冠亚季 + 专项奖</td>
+<td>10 万</td>
+<td>✅ 已确认</td>
+</tr>
+<tr>
+<td><strong>设备物流</strong></td>
+<td>30 台往返（顺丰保价）</td>
+<td>0.5-1 万</td>
+<td>✅ 可估</td>
+</tr>
+<tr>
+<td><strong>设备损耗</strong></td>
+<td>维修/故障预留</td>
+<td>0.5 万</td>
+<td>✅ 可估</td>
+</tr>
+<tr>
+<td><strong>获奖赠送</strong></td>
+<td>冠/亚军设备（非现金）</td>
+<td>设备成本</td>
+<td>🟡 待定</td>
+</tr>
+<tr>
+<td><strong>导师差旅</strong></td>
+<td>3-5 人 × 3 次线下</td>
+<td>0.5-1 万</td>
+<td>✅ 可估</td>
+</tr>
+<tr>
+<td><strong>物料</strong></td>
+<td>横幅/易拉宝/礼包/证书</td>
+<td>0.3-0.5 万</td>
+<td>✅ 可估</td>
+</tr>
+<tr>
+<td><strong>传播制作</strong></td>
+<td>主视觉/海报/视频</td>
+<td><strong>内部消化</strong></td>
+<td>✅ 已确认</td>
+</tr>
+<tr>
+<td><strong>场地费</strong></td>
+<td>年会赛事 slot 分摊</td>
+<td><strong>待确认</strong></td>
+<td>🔴 找组委会</td>
+</tr>
+<tr>
+<td><strong>通道费</strong></td>
+<td>决赛参赛者年会入场</td>
+<td><strong>待确认</strong></td>
+<td>🔴 找组委会</td>
+</tr>
+<tr>
+<td><strong>现场服务</strong></td>
+<td>摄影/搭建/服务费</td>
+<td><strong>待确认</strong></td>
+<td>🔴 找组委会</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>二、需与年会组委会确认的费用项</h2>
+<p><strong>场地费</strong>：</p>
+<ul>
+<li>A）赛事 slot 已包含在年会整体场地费中（无额外费用）</li>
+<li>B）按时段分摊（例如半天使用费）</li>
+<li>C）赞助商权益已覆盖</li>
+</ul>
+<p><strong>通道费</strong>：</p>
+<ul>
+<li>A）决赛参赛者以"赛事嘉宾"身份免费入场</li>
+<li>B）赞助方承担参赛者门票费（~30-40 人）</li>
+<li>C）参赛者自费（不推荐）</li>
+</ul>
+<p><strong>现场服务</strong>：</p>
+<ul>
+<li>A）年会统一提供（含搭建/摄影/直播）</li>
+<li>B）赛事部分单独采购</li>
+<li>C）祥承自行安排</li>
+</ul>
+<hr>
+<h2>三、奖金结构</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>奖项</th>
+<th>数量</th>
+<th>单项金额</th>
+<th>小计</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>🥇 冠军</td>
+<td>1</td>
+<td>¥30,000</td>
+<td>¥30,000</td>
+</tr>
+<tr>
+<td>🥈 亚军</td>
+<td>2</td>
+<td>¥15,000</td>
+<td>¥30,000</td>
+</tr>
+<tr>
+<td>🥉 季军</td>
+<td>3</td>
+<td>¥8,000</td>
+<td>¥24,000</td>
+</tr>
+<tr>
+<td>🏅 专项奖</td>
+<td>4</td>
+<td>¥4,000</td>
+<td>¥16,000</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>¥100,000</strong></td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>四、奖金税务合规</h2>
+<h3>税务分析</h3>
+<p>比赛奖金属于<strong>"偶然所得"</strong>，适用 <strong>20% 税率</strong>，由<strong>发放方代扣代缴</strong>。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>奖项</th>
+<th>税前金额</th>
+<th>个税（20%）</th>
+<th>税后实发</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>冠军</td>
+<td>30,000</td>
+<td>6,000</td>
+<td>24,000</td>
+</tr>
+<tr>
+<td>亚军（x2）</td>
+<td>15,000</td>
+<td>3,000</td>
+<td>12,000</td>
+</tr>
+<tr>
+<td>季军（x3）</td>
+<td>8,000</td>
+<td>1,600</td>
+<td>6,400</td>
+</tr>
+<tr>
+<td>专项奖（x4）</td>
+<td>4,000</td>
+<td>800</td>
+<td>3,200</td>
+</tr>
+</tbody></table></div>
+<h3>推荐方案</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>方案</th>
+<th>说明</th>
+<th>优缺点</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>A：税前金额制（推荐）</strong></td>
+<td>公布金额即税前，代扣后实发</td>
+<td>简单合规</td>
+</tr>
+<tr>
+<td><strong>B：税后金额制</strong></td>
+<td>实发公布金额，税款额外承担</td>
+<td>体验好，但预算增加约 2.5 万</td>
+</tr>
+</tbody></table></div>
+<h3>执行要点</h3>
+<ul>
+<li><strong>代扣义务方</strong>：建议祥承科技（需与法务确认）</li>
+<li><strong>发放方式</strong>：银行转账至获奖人/队长个人账户</li>
+<li><strong>发放时效</strong>：颁奖后 30 天内完成</li>
+<li><strong>赛事手册中注明</strong>："奖金为税前金额，由主办方依法代扣代缴个人所得税"</li>
+</ul>
+<blockquote>🔴 需法务确认：代扣主体是祥承还是交大？团队奖金发给队长还是按人头分？</blockquote>
+</div>
+<div class="doc-section" id="section-conversion">
+<h1>🔄 赛后转化</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>一、PoC 对接说明</h2>
+<blockquote><strong>PoC（Proof of Concept，概念验证）</strong> = 将赛事中涌现的优秀作品/方案，与祥承的真实客户需求对接，做小规模验证。PoC 成功可进一步发展为正式产品/合作项目。</blockquote>
+<hr>
+<h2>二、优先级排序</h2>
+<p>基于 2025-2026 年 AI Agent 和端侧 AI 的生态发展现状：</p>
+<ul>
+<li><strong>AI Agent 市场</strong>：2025 年约 $75.5 亿，预计 2030 年达 $526 亿（CAGR 46%）</li>
+<li><strong>端侧 AI 开发者</strong>：全球约 1100 万，大中华区约 240 万</li>
+<li><strong>行业趋势</strong>：从"实验性 PoC"向"可量化价值的规模化落地"转变</li>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>优先级</th>
+<th>转化方向</th>
+<th>理由</th>
+<th>时间窗口</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td><strong>PoC 对接 + 商业落地</strong></td>
+<td>窗口期 2-3 年，需快速积累行业场景样板</td>
+<td>赛后 1-3 个月</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td><strong>生态建设 + 开发者社区</strong></td>
+<td>端侧 AI 开发者生态仍处于早期，先发者有机会建立平台粘性</td>
+<td>赛后持续</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td><strong>人才招聘 + 校企合作</strong></td>
+<td>优秀参赛者是最精准的招聘池</td>
+<td>赛后 1-6 个月</td>
+</tr>
+<tr>
+<td><strong>P3</strong></td>
+<td><strong>联合实验室 + 产学研</strong></td>
+<td>与交大/海安研究院共建，中长期投入</td>
+<td>赛后 6-12 个月</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>三、PoC 对接执行方案</h2>
+<pre><code>
+赛后 D+7   → 复盘会：识别 Top 作品中可转化的 3-5 个方向
+
+
+赛后 D+14  → 对接会：祥承商务 + 技术与获奖/入围团队 1:1 沟通
+
+
+赛后 D+30  → 启动 PoC：明确场景、周期（4-8 周）、资源与交付物
+
+
+赛后 D+60  → PoC 成果评审：决定是否进入正式合作/产品化
+
+
+赛后 D+90  → 签署合作协议 / 许可协议（如适用）
+
+
+</code></pre>
+</div>
+<div class="doc-section" id="section-checklist">
+<h1>✅ 待对齐清单</h1>
+<div class="doc-meta"><span>📌 v0.4</span> <span>📅 2026-03-05</span></div>
+<blockquote>版本：v0.4 · 更新时间：2026-03-05</blockquote>
+<hr>
+<h2>状态图例</h2>
+<ul>
+<li>✅ 已确认/完成</li>
+<li>🟡 方案已出/待启动</li>
+<li>🔴 需外部确认</li>
+</ul>
+<hr>
+<h2>清单</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>#</th>
+<th>事项</th>
+<th>状态</th>
+<th>备注</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>比赛名称</td>
+<td>✅ 选定</td>
+<td>BoxCraft 2026</td>
+</tr>
+<tr>
+<td>2</td>
+<td>对外 slogan</td>
+<td>✅ 选定</td>
+<td>D3b + E1a/E2c/E3a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>核心定位</td>
+<td>✅ 对齐</td>
+<td>"最低门槛的端侧 AI Agent 开发平台"</td>
+</tr>
+<tr>
+<td>4</td>
+<td>"具身智能"叙事边界</td>
+<td>✅ 对齐</td>
+<td>仅 400 TOPS 路线图时使用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>48 TOPS 口径</td>
+<td>✅ 对齐</td>
+<td>强调"绰绰有余"</td>
+</tr>
+<tr>
+<td>6</td>
+<td>400 TOPS 可否公开</td>
+<td>✅ 确认</td>
+<td>可讲路线图</td>
+</tr>
+<tr>
+<td>7</td>
+<td>时间线</td>
+<td>✅ 对齐</td>
+<td>3月筹备 → 4月报名 → 7月决赛</td>
+</tr>
+<tr>
+<td>8</td>
+<td>决赛形式</td>
+<td>✅ 选定</td>
+<td>模式 B+C（路演+Demo+评委追问）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>决赛队数</td>
+<td>✅ 选定</td>
+<td>8 队</td>
+</tr>
+<tr>
+<td>10</td>
+<td>半决赛形式</td>
+<td>✅ 选定</td>
+<td>年会前一周线上，异步评审</td>
+</tr>
+<tr>
+<td>11</td>
+<td>总预算上限</td>
+<td>✅ 对齐</td>
+<td>~30 万（祥承侧全口径）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>传播制作</td>
+<td>✅ 确认</td>
+<td>内部消化</td>
+</tr>
+<tr>
+<td>13</td>
+<td>年会演讲人选</td>
+<td>✅ 确认</td>
+<td>技术负责人，内容侧重生态共建</td>
+</tr>
+<tr>
+<td>14</td>
+<td>院士/专家颁奖</td>
+<td>🟡 列出</td>
+<td>候选方向已列，赛前 2-4 周落实</td>
+</tr>
+<tr>
+<td>15</td>
+<td>赛道 B 命题细节</td>
+<td>✅ 对齐</td>
+<td>假定摄像头/语音模块支持到位</td>
+</tr>
+<tr>
+<td>16</td>
+<td>场地费</td>
+<td>🔴 找组委会</td>
+<td>选项 A/B/C 已列</td>
+</tr>
+<tr>
+<td>17</td>
+<td>通道费</td>
+<td>🔴 找组委会</td>
+<td>选项 A/B/C 已列</td>
+</tr>
+<tr>
+<td>18</td>
+<td>现场服务费</td>
+<td>🔴 找组委会</td>
+<td>选项 A/B/C 已列</td>
+</tr>
+<tr>
+<td>19</td>
+<td>宣发渠道清单</td>
+<td>✅ 完成</td>
+<td>见 07｜宣发与传播</td>
+</tr>
+<tr>
+<td>20</td>
+<td>赛后转化优先级</td>
+<td>✅ 完成</td>
+<td>PoC > 生态 > 人才 > 联合实验室</td>
+</tr>
+<tr>
+<td>21</td>
+<td>评审机制与权重</td>
+<td>✅ 对齐</td>
+<td>创新25% > 商业25% > 完成20% > 技术15% > 适配15%</td>
+</tr>
+<tr>
+<td>22</td>
+<td>设备管理与发放</td>
+<td>✅ 完成</td>
+<td>分阶段流程 + 借用协议</td>
+</tr>
+<tr>
+<td>23</td>
+<td>训练营计划</td>
+<td>✅ 完成</td>
+<td>2 线上 + 1 线下 + 飞书知识库</td>
+</tr>
+<tr>
+<td>24</td>
+<td>报名门槛</td>
+<td>✅ 完成</td>
+<td>学生 + 自由个人，不接受企业</td>
+</tr>
+<tr>
+<td>25</td>
+<td>IP 与知识产权</td>
+<td>✅ 完成</td>
+<td>不强制开源 + 60 天优先投资窗口</td>
+</tr>
+<tr>
+<td>26</td>
+<td>赞助与合作方</td>
+<td>✅ 完成</td>
+<td>交大+联发科联合主办，多协办方</td>
+</tr>
+<tr>
+<td>27</td>
+<td>直播方案</td>
+<td>✅ 完成</td>
+<td>B 站为主</td>
+</tr>
+<tr>
+<td>28</td>
+<td>仓库公开策略</td>
+<td>✅ 确认</td>
+<td>赛后统一公开</td>
+</tr>
+<tr>
+<td>29</td>
+<td>僵尸队清退标准</td>
+<td>✅ 确认</td>
+<td>无代码/未参会/失联</td>
+</tr>
+<tr>
+<td>30</td>
+<td>半决赛评审流程</td>
+<td>✅ 完成</td>
+<td>异步评审</td>
+</tr>
+<tr>
+<td>31</td>
+<td>奖金税务合规</td>
+<td>🟡 方案已出</td>
+<td>偶然所得 20% 代扣，需法务确认主体</td>
+</tr>
+<tr>
+<td>32</td>
+<td>报名系统</td>
+<td>🟡 已推荐</td>
+<td>金数据 + 赛事官网</td>
+</tr>
+<tr>
+<td>33</td>
+<td>联合传播机制</td>
+<td>✅ 草案</td>
+<td>审稿流程 + 发言人安排</td>
+</tr>
+<tr>
+<td>34</td>
+<td>预赛团队评估方案</td>
+<td>✅ 确认</td>
+<td>混合制</td>
+</tr>
+<tr>
+<td>35</td>
+<td>赛道 A/C 具体命题</td>
+<td>✅ 选定</td>
+<td>A:导购/SOP/合规；C:插件/编排</td>
+</tr>
+<tr>
+<td>36</td>
+<td>赛事手册撰写</td>
+<td>🟡 待启动</td>
+<td>等关键决策确认后起草</td>
+</tr>
+<tr>
+<td>37</td>
+<td>参赛协议/借用协议</td>
+<td>🟡 待起草</td>
+<td>需法务参与</td>
+</tr>
+<tr>
+<td>38</td>
+<td>命题素材与样例数据</td>
+<td>🔴 待祥承提供</td>
+<td>脱敏场景素材 + 样例数据 + 插件接口文档</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2>下一步</h2>
+<ol>
+<li>🟡 等祥承提供命题素材和样例数据（第 38 项）</li>
+<li>🟡 启动赛事手册 / 参赛协议 / 借用协议的撰写</li>
+<li>🔴 找年会组委会确认场地费 / 通道费 / 现场服务费（第 16-18 项）</li>
+</ol>
+</div>
+<div class="doc-section" id="section-agreement">
+<h1>📄 参赛协议（草案）</h1>
+<div class="doc-meta"></div>
+<blockquote>⚠ 本文件为内部草案，正式发布前需法务审核。</blockquote>
+<hr>
+<p><strong>协议编号</strong>：BoxCraft-2026-PA-___</p>
+<p><strong>甲方</strong>（主办方）：上海交通大学机器人研究所（以下简称"主办方"）</p>
+<p><strong>乙方</strong>（参赛团队）：____________ 队（队长：______）</p>
+<hr>
+<h2>第一条 参赛资格与承诺</h2>
+<ol>
+<li>乙方确认其参赛成员均为在校学生或自由个人开发者，不以企业名义参赛。</li>
+<li>乙方承诺所提交的作品为团队原创，或已获得所有引用代码/素材的合法授权。</li>
+<li>乙方承诺不在参赛过程中使用任何非法获取的数据、商业秘密或他人知识产权。</li>
+</ol>
+<h2>第二条 作品知识产权</h2>
+<ol>
+<li><strong>归属</strong>：参赛作品（含代码、文档、设计、素材等）的知识产权<strong>归乙方团队所有</strong>。</li>
+<li><strong>授权</strong>：乙方授予甲方及赛事赞助方<strong>非独占、免费、合理期限</strong>的使用许可，许可范围限于：</li>
+<ul>
+<li>赛事评审过程中的查看与运行</li>
+<li>赛事宣传中的展示（视频截图、作品描述、路演片段等）</li>
+<li>赛事报告、白皮书中的引用与展示</li>
+<li>上述授权不包括对作品的商业性使用。如需商业性使用，双方需另行协商签署协议。</li>
+</ul>
+</ol>
+<h2>第三条 优先合作权</h2>
+<ol>
+<li>赛后 <strong>60 个自然日</strong>内，甲方及赛事赞助方对获奖及入围作品享有<strong>优先投资、PoC 合作、技术许可/收购谈判</strong>的权利。</li>
+<li>在上述窗口期内，乙方如收到第三方投资或合作意向，应<strong>优先通知甲方</strong>，甲方有权在同等条件下优先合作。</li>
+<li>窗口期结束后，乙方可自由处置作品相关权益，甲方不设任何限制。</li>
+</ol>
+<h2>第四条 数据与隐私</h2>
+<ol>
+<li>乙方承诺在开发与演示过程中<strong>不使用真实的个人信息、商业敏感数据或受保护数据</strong>。</li>
+<li>主办方提供的样例数据均为脱敏数据，乙方不得尝试还原原始数据。</li>
+<li>乙方不得在代码仓库或提交物中包含密钥、账号、Token 等敏感信息。</li>
+</ol>
+<h2>第五条 AI 辅助编程</h2>
+<ol>
+<li>允许并鼓励使用 AI 辅助编程工具。</li>
+<li>乙方须在 README 中如实披露所使用的 AI 工具名称。</li>
+<li>乙方须确保所有代码可复现、可解释，并遵守所引用代码的开源许可证。</li>
+<li>乙方对 AI 生成代码的合规性承担最终责任。</li>
+</ol>
+<h2>第六条 开源与公开</h2>
+<ol>
+<li>本赛事<strong>不强制要求开源</strong>。</li>
+<li>开发期间，代码仓库默认设为私有（评委/导师可见）。</li>
+<li>赛后，代码仓库将统一转为公开。不愿公开的团队可申请保持私有，但须提交可复现的 Demo 包。</li>
+</ol>
+<h2>第七条 赛事纪律</h2>
+<ol>
+<li>乙方不得抄袭他人作品或利用其他团队的成果。</li>
+<li>乙方不得在赛事期间发表损害主办方、赞助方或其他参赛者声誉的言论。</li>
+<li>如发现违规行为，主办方有权取消乙方参赛资格和奖项，并追回已发放的奖金和设备。</li>
+</ol>
+<h2>第八条 奖金发放</h2>
+<ol>
+<li>奖金为<strong>税前金额</strong>，主办方/赞助方依法代扣代缴个人所得税。</li>
+<li>奖金通过银行转账发放至队长指定个人账户，颁奖后 <strong>30 个自然日</strong>内完成。</li>
+<li>队内奖金分配由乙方团队自行协商，甲方不承担分配争议责任。</li>
+</ol>
+<h2>第九条 免责声明</h2>
+<ol>
+<li>主办方不对参赛过程中因乙方自身原因导致的设备损坏、数据丢失或其他损失承担责任。</li>
+<li>主办方保留因不可抗力调整赛程安排的权利。</li>
+</ol>
+<h2>第十条 其他</h2>
+<ol>
+<li>本协议自乙方确认报名时生效，至赛事结束及奖金发放完成后终止（优先合作权条款除外）。</li>
+<li>本协议的解释权归主办方所有。</li>
+<li>如有争议，双方协商解决；协商不成，提交甲方所在地有管辖权的法院裁决。</li>
+</ol>
+<hr>
+<p><strong>甲方</strong>（主办方代表）：__________ 日期：__________</p>
+<p><strong>乙方</strong>（队长签字）：__________ 日期：__________</p>
+</div>
+<div class="doc-section" id="section-device-loan">
+<h1>📄 设备借用协议（草案）</h1>
+<div class="doc-meta"></div>
+<blockquote>⚠ 本文件为内部草案，正式发布前需法务审核。</blockquote>
+<hr>
+<p><strong>协议编号</strong>：BoxCraft-2026-DL-___</p>
+<p><strong>甲方</strong>（设备所有方）：上海祥承科技有限公司（以下简称"甲方"）</p>
+<p><strong>乙方</strong>（借用方）：____________ 队（队长：______，身份证号：______）</p>
+<hr>
+<h2>第一条 借用设备</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>设备名称</td>
+<td>AI Box 端侧 AI 工作站</td>
+</tr>
+<tr>
+<td>设备数量</td>
+<td>1 台</td>
+</tr>
+<tr>
+<td>设备编号</td>
+<td>__________</td>
+</tr>
+<tr>
+<td>附件</td>
+<td>电源适配器 × 1、数据线 × 1</td>
+</tr>
+</tbody></table></div>
+<h2>第二条 借用期限</h2>
+<ol>
+<li>起始日：设备签收日（以快递签收记录为准）</li>
+<li>截止日：赛事结束后 <strong>7 个自然日</strong></li>
+<li>如乙方入围决赛，设备于决赛现场统一回收</li>
+<li>如乙方获冠军/亚军，设备<strong>赠予乙方</strong>，无需归还</li>
+</ol>
+<h2>第三条 使用规范</h2>
+<p>乙方承诺：</p>
+<ol>
+<li><strong>仅限用途</strong>：设备仅用于 BoxCraft 2026 赛事相关开发</li>
+<li><strong>妥善保管</strong>：保持设备正常使用状态，避免摔落、进水、过热等损害</li>
+<li><strong>禁止行为</strong>：</li>
+<ul>
+<li>❌ 拆机、改装硬件</li>
+<li>❌ 转借、转租给第三方</li>
+<li>❌ 用于商业用途或与赛事无关的项目</li>
+<li>❌ 刷入非官方系统或进行 Root 操作（除非官方文档明确许可）</li>
+</ul>
+</ol>
+<h2>第四条 损坏与赔偿</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>情形</th>
+<th>处理方式</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>正常使用磨损（如外壳轻微划痕）</td>
+<td>不追究</td>
+</tr>
+<tr>
+<td>人为损坏（如摔落导致屏幕碎裂、进水等）</td>
+<td>按设备<strong>成本价 50%</strong> 赔偿</td>
+</tr>
+<tr>
+<td>设备丢失或拒绝归还</td>
+<td>按设备<strong>成本价全额</strong>赔偿</td>
+</tr>
+</tbody></table></div>
+<blockquote>设备成本价由甲方提供清单，签署本协议时告知乙方。</blockquote>
+<h2>第五条 设备归还</h2>
+<ol>
+<li><strong>归还方式</strong>：顺丰到付寄回甲方指定地址（甲方承担运费）</li>
+<li><strong>归还期限</strong>：赛事结束后 7 个自然日内寄出</li>
+<li><strong>逾期处理</strong>：逾期 7 日内补寄可免责；逾期超过 14 日视为拒绝归还</li>
+<li><strong>归还检查</strong>：甲方收到设备后 5 个工作日内完成外观与功能检查，如发现问题将以书面形式通知乙方</li>
+</ol>
+<h2>第六条 物流安排</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>项目</th>
+<th>安排</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>发放物流</td>
+<td>甲方顺丰保价寄出，<strong>甲方承担运费</strong></td>
+</tr>
+<tr>
+<td>归还物流</td>
+<td>乙方顺丰寄回，<strong>甲方承担运费</strong>（到付）</td>
+</tr>
+<tr>
+<td>包装要求</td>
+<td>使用原包装或等效保护包装</td>
+</tr>
+</tbody></table></div>
+<h2>第七条 免责条款</h2>
+<ol>
+<li>因不可抗力（自然灾害、疫情等）导致设备无法按时寄出或归还的，双方协商处理，不追究违约责任。</li>
+<li>因设备自身质量缺陷导致的故障，乙方不承担赔偿责任。甲方应在 48 小时内提供备机替换。</li>
+</ol>
+<h2>第八条 协议效力</h2>
+<ol>
+<li>本协议自双方签署之日起生效。</li>
+<li>设备归还并经甲方验收通过后，本协议自动终止。</li>
+<li>本协议一式两份，甲乙双方各执一份（电子签章版具有同等效力）。</li>
+</ol>
+<hr>
+<p><strong>甲方</strong>（盖章/签字）：__________ 日期：__________</p>
+<p><strong>乙方</strong>（队长签字）：__________ 日期：__________</p>
+<p><strong>乙方联系方式</strong>：</p>
+<ul>
+<li>手机号：__________</li>
+<li>收件地址：__________</li>
+</ul>
+</div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Theme
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+
+    // Restore theme
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+
+    // Navigation
+    function showDoc(id) {
+      document.querySelectorAll('.doc-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      const section = document.getElementById('section-' + id);
+      const navItem = document.querySelector('.nav-item[data-target="' + id + '"]');
+      if (section) section.classList.add('active');
+      if (navItem) navItem.classList.add('active');
+      window.scrollTo(0, 0);
+      // Update URL hash
+      history.replaceState(null, '', '#' + id);
+      // Close mobile sidebar
+      document.getElementById('sidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay').classList.remove('show');
+    }
+
+    // Init from hash
+    (function() {
+      const hash = window.location.hash.slice(1);
+      if (hash) showDoc(hash);
+      else {
+        // Set first item active
+        const first = document.querySelector('.nav-item');
+        if (first) first.classList.add('active');
+      }
+    })();
+
+    // Search / Filter
+    function filterNav(query) {
+      query = query.toLowerCase();
+      document.querySelectorAll('.nav-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? '' : 'none';
+      });
+      document.querySelectorAll('.nav-group').forEach(group => {
+        const visible = group.querySelectorAll('.nav-item[style=""], .nav-item:not([style])');
+        const hasVisible = Array.from(group.querySelectorAll('.nav-item')).some(i => i.style.display !== 'none');
+        group.querySelector('.nav-group-title').style.display = hasVisible ? '' : 'none';
+      });
+    }
+
+    // Mobile sidebar
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.querySelector('.sidebar-overlay').classList.toggle('show');
+    }
+
+    // Reading progress
+    window.addEventListener('scroll', function() {
+      const bar = document.getElementById('progressBar');
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h > 0) bar.style.width = (window.scrollY / h * 100) + '%';
+    });
+  </script>
+</body>
+</html>

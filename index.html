@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoxCraft 2026 — AI Box 端侧 Agent 开发挑战赛</title>
+  <meta name="description"
+    content="BoxCraft 2026 是面向开发者的端侧 AI Agent 挑战赛。基于 AI Box 48 TOPS 端侧算力，打造可落地的 Agent 应用。¥100,000 奖金池，30 台设备免费借用。">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo.png" alt="BoxCraft">
+        <span>BoxCraft <span class="year">2026</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#tracks">赛道</a></li>
+        <li><a href="#timeline">赛程</a></li>
+        <li><a href="#prizes">奖项</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="community.html">社区</a></li>
+        <li><a href="docs.html">策划文档</a></li>
+        <li><a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题"
+            style="font-size:1.1rem;">🌙</a></li>
+        <li><a href="register.html" class="btn-primary" style="padding:8px 20px; font-size:0.85rem;">立即报名</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="BoxCraft Logo" class="hero-logo">
+      <h1>BoxCraft <span class="year">2026</span></h1>
+      <p class="subtitle">AI Box 端侧 Agent 开发挑战赛</p>
+      <p class="slogan">
+        把 <span class="highlight">Agent</span> 装进盒子<br>
+        让智能<span class="highlight">无处不在</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">¥100K</div>
+          <div class="stat-label">奖金池</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30</div>
+          <div class="stat-label">台 AI Box 免费借用</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">3</div>
+          <div class="stat-label">场训练营</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">48</div>
+          <div class="stat-label">TOPS 端侧算力</div>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="register.html" class="btn-primary">立即报名</a>
+        <a href="#tracks" class="btn-outline">了解赛道</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="background: var(--dark);">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>让 AI Agent <span class="green">走出对话框</span></h2>
+        <p>连接真实世界</p>
+      </div>
+      <div class="about-grid fade-in">
+        <div class="about-text">
+          <h3>你的 AI Agent 产品，从这个<span style="color:var(--green)">底座</span>开始</h3>
+          <p>AI Box 是基于联发科天玑 9300 芯片的端侧 AI Agent 硬件工作站。48 TOPS 端侧算力，Android 系统，即插即用。</p>
+          <p>不用等更强的芯片——48 TOPS，对于任何行业、任何需求的 Agent 产品开发和验证来说，<strong style="color:var(--green)">绰绰有余</strong>。</p>
+          <p>数据不出盒子，毫秒级响应，离线场景照常工作。这不是一个盒子，而是帮你把 AI Agent 从想法变成产品的底座。</p>
+        </div>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="icon">🧠</div>
+            <div class="label">端侧算力</div>
+            <div class="value">48 TOPS</div>
+          </div>
+          <div class="about-feature">
+            <div class="icon">🔒</div>
+            <div class="label">数据安全</div>
+            <div class="value">数据不出盒子</div>
+          </div>
+          <div class="about-feature">
+            <div class="icon">⚡</div>
+            <div class="label">响应速度</div>
+            <div class="value">毫秒级</div>
+          </div>
+          <div class="about-feature">
+            <div class="icon">📦</div>
+            <div class="label">开发体验</div>
+            <div class="value">即插即用</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section id="tracks">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>四大<span class="green">赛道</span></h2>
+        <p>三条命题赛道 + 一条开放赛道，总有一条适合你</p>
+      </div>
+      <div class="tracks-grid fade-in">
+        <div class="track-card">
+          <div class="track-label">Track A · 命题</div>
+          <h3>💼 企业端侧 Agent</h3>
+          <p>客服导购 · SOP 诊断 · 合规助手。解决企业场景中的真实痛点，让 AI Agent 在本地可靠运行。</p>
+        </div>
+        <div class="track-card">
+          <div class="track-label">Track B · 命题</div>
+          <h3>👁️ 端侧感知与交互</h3>
+          <p>视觉 · 语音 · 多模态。让 Agent 拥有看见和听见的能力，实现与物理世界的直接交互。</p>
+        </div>
+        <div class="track-card">
+          <div class="track-label">Track C · 命题</div>
+          <h3>🔧 AI Box 底座能力</h3>
+          <p>插件系统 · 多 Agent 编排。增强平台生态的核心能力，让 AI Box 成为更强大的 Agent 底座。</p>
+        </div>
+        <div class="track-card">
+          <div class="track-label">Track D · 开放</div>
+          <h3>💡 自由创新</h3>
+          <p>机器人 · IoT · 教育 · 你说了算。唯一的限制是你的想象力。具身智能方向可角逐专项奖。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" style="background: var(--dark);">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>赛程<span class="green">时间线</span></h2>
+        <p>从报名到决赛，5 个月的完整旅程</p>
+      </div>
+      <div class="timeline fade-in">
+        <div class="timeline-item active">
+          <div class="timeline-dot">📢</div>
+          <div class="timeline-content">
+            <div class="date">2026 年 4 月</div>
+            <h4>报名开放</h4>
+            <p>提交报名表 + 项目提案</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🔍</div>
+          <div class="timeline-content">
+            <div class="date">4 月底</div>
+            <h4>提案评审 + 预热任务</h4>
+            <p>选出 25 支入选队伍</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">📦</div>
+          <div class="timeline-content">
+            <div class="date">5 月初</div>
+            <h4>签协议 · 设备发放</h4>
+            <p>AI Box 顺丰包邮寄到你手上</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🎓</div>
+          <div class="timeline-content">
+            <div class="date">5 月 – 6 月</div>
+            <h4>3 场训练营</h4>
+            <p>入门 → 进阶 → 冲刺，全程技术支持</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">📤</div>
+          <div class="timeline-content">
+            <div class="date">7 月上旬</div>
+            <h4>作品提交</h4>
+            <p>代码 + 视频 + 文档锁定提交</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🏅</div>
+          <div class="timeline-content">
+            <div class="date">7 月中旬</div>
+            <h4>半决赛（线上）</h4>
+            <p>异步评审，选出 TOP 8</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🏆</div>
+          <div class="timeline-content">
+            <div class="date">7 月底</div>
+            <h4>决赛 · 虹桥国展中心</h4>
+            <p>金色大厅现场路演 + 颁奖</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIZES -->
+  <section id="prizes">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>丰厚<span class="green">奖项</span></h2>
+        <p>¥100,000 奖金池 + 设备赠送 + 实习直通 + PoC 合作</p>
+      </div>
+      <div class="prizes-grid fade-in">
+        <div class="prize-card gold">
+          <div class="prize-icon">🥇</div>
+          <div class="prize-title">冠军</div>
+          <div class="prize-amount">¥30,000</div>
+          <div class="prize-count">1 队</div>
+        </div>
+        <div class="prize-card">
+          <div class="prize-icon">🥈</div>
+          <div class="prize-title">亚军</div>
+          <div class="prize-amount">¥15,000</div>
+          <div class="prize-count">2 队</div>
+        </div>
+        <div class="prize-card">
+          <div class="prize-icon">🥉</div>
+          <div class="prize-title">季军</div>
+          <div class="prize-amount">¥8,000</div>
+          <div class="prize-count">3 队</div>
+        </div>
+        <div class="prize-card">
+          <div class="prize-icon">🏅</div>
+          <div class="prize-title">专项奖</div>
+          <div class="prize-amount">¥4,000</div>
+          <div class="prize-count">4 队</div>
+        </div>
+      </div>
+      <div class="prizes-extra fade-in">
+        <div class="extra-item"><span class="icon">🎁</span> 冠亚军获赠 AI Box</div>
+        <div class="extra-item"><span class="icon">💼</span> 实习/校招直通面试</div>
+        <div class="extra-item"><span class="icon">🤝</span> 60 天优先 PoC 合作</div>
+        <div class="extra-item"><span class="icon">📢</span> 年会现场展示</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section style="background: var(--dark);">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>谁可以<span class="green">参加</span>？</h2>
+      </div>
+      <div class="who-tags fade-in">
+        <div class="who-tag"><span class="icon">👩‍🎓</span>在校学生（本/硕/博）</div>
+        <div class="who-tag"><span class="icon">👨‍💻</span>自由个人开发者</div>
+        <div class="who-tag"><span class="icon">👥</span>1–4 人 / 队</div>
+        <div class="who-tag"><span class="icon">🔀</span>可跨校组队</div>
+        <div class="who-tag"><span class="icon">🌏</span>不限地域</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>常见<span class="green">问题</span></h2>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>没有 AI Box 设备怎么开始？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">报名不需要设备。通过筛选后我们会免费寄送 AI Box。前期可使用 SDK 模拟环境开发。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>可以使用云端 API 吗？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">可以辅助使用，但核心功能须在端侧运行。端侧能力是评审加分项。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>可以用 AI 辅助编程吗？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">鼓励使用！需在 README 中披露工具名称，代码须可解释、可复现。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>作品 IP 归谁？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">归参赛团队所有。不强制开源。赛后 60 天内主办方享有优先合作权。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>奖金怎么发？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">税前金额，代扣 20% 个人所得税后银行转账，颁奖后 30 天内到账。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>决赛需要到现场吗？</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">是的。决赛在上海虹桥国展中心金色大厅（机器人年会主会场）进行现场路演。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / REGISTER -->
+  <section class="cta-section" id="register">
+    <h2>准备好了吗？</h2>
+    <p>2026 年 4 月，报名正式开放</p>
+    <a href="register.html" class="btn-primary" style="font-size:1.1rem; padding: 14px 40px;">立即报名</a>
+    <p style="margin-top: 16px; font-size: 0.85rem; color: var(--gray);">报名即表示同意《参赛协议》和《设备借用协议》</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="organizers">
+      <div class="org-row">联合主办：<strong>上海交通大学机器人研究所</strong> · <strong>联发科技（MediaTek）</strong></div>
+      <div class="org-row">核心赞助：<strong>上海祥承科技有限公司</strong></div>
+      <div class="org-row" style="color:#666; font-size:0.8rem;">协办（拟）：海安上海交通大学智能装备研究院 · 上海人工智能协会</div>
+    </div>
+    <div class="copyright">
+      © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // FAQ Toggle
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      item.classList.toggle('open');
+    }
+
+    // Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth nav highlight
+    const navLinks = document.querySelectorAll('.nav-links a:not(.btn-primary)');
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (pageYOffset >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === '#' + current
+          ? '#ffffff' : '';
+      });
+    });
+  </script>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function () {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

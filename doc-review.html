@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评审机制 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 评审机制：评审团组成、评审维度与权重、Rubric 评分锚点、硬门槛要求。">
+    <link rel="stylesheet" href="doc.css">
+</head>
+
+<body>
+    <nav class="doc-nav">
+        <div class="nav-inner">
+            <a href="community.html" class="nav-back">← 返回社区</a>
+            <span class="nav-title">BoxCraft <span class="green">2026</span></span>
+        </div>
+      <a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem; text-decoration:none; margin-left: auto;">🌙</a>
+    </nav>
+
+    <main class="doc-container">
+        <header class="doc-header">
+            <h1>🤖 评审机制</h1>
+            <div class="meta">
+                <span>📌 版本 v0.4</span>
+                <span>📅 2026-03-05</span>
+            </div>
+        </header>
+
+        <article class="doc-content">
+
+            <h2>一、评审团组成</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>角色</th>
+                            <th>来源</th>
+                            <th>人数</th>
+                            <th>定位</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>学术评委</strong></td>
+                            <td>上海交大机器人所/AI 学院教授</td>
+                            <td>2-3 人</td>
+                            <td>技术深度与创新性把关</td>
+                        </tr>
+                        <tr>
+                            <td><strong>产业评委</strong></td>
+                            <td>祥承科技（CTO/技术总监）</td>
+                            <td>2 人</td>
+                            <td>产品化与商业化视角</td>
+                        </tr>
+                        <tr>
+                            <td><strong>行业专家</strong></td>
+                            <td>联发科/AI 行业代表</td>
+                            <td>1-2 人</td>
+                            <td>行业落地与生态适配</td>
+                        </tr>
+                        <tr>
+                            <td><strong>投资人评委</strong></td>
+                            <td>VC/天使投资人</td>
+                            <td>1 人</td>
+                            <td>商业潜力与市场价值判断</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <blockquote>技术导师（祥承工程师）默认不担任评委。如个别导师兼任评委，需设置回避机制。</blockquote>
+
+            <hr>
+
+            <h2>二、评审维度与权重</h2>
+            <blockquote>维度排序：<strong>创新性 > 商业价值 > 完成度 > 技术深度 > AI Box 适配度</strong></blockquote>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>权重</th>
+                            <th>评审关注点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>创新性</strong></td>
+                            <td>25%</td>
+                            <td>Agent 方案原创性、差异化亮点、技术路线新颖度、方法突破</td>
+                        </tr>
+                        <tr>
+                            <td><strong>商业价值与影响</strong></td>
+                            <td>25%</td>
+                            <td>真实痛点与目标用户清晰；价值可量化；落地/推广/商业化路径清楚</td>
+                        </tr>
+                        <tr>
+                            <td><strong>完成度与可用性</strong></td>
+                            <td>20%</td>
+                            <td>Demo 端到端可用与稳定；交互清晰；答辩能讲清「为何有效/如何实现」</td>
+                        </tr>
+                        <tr>
+                            <td><strong>技术深度</strong></td>
+                            <td>15%</td>
+                            <td>工程结构合理、依赖清晰、可复现、离线兜底、合规披露齐全</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Box 适配度</strong></td>
+                            <td>15%</td>
+                            <td>体现端侧优势（隐私/低延迟/离线/端云协同/外设）与赛道契合</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <blockquote>对学生团队不要求写完整商业计划书。回答四个问题即可：<strong>给谁用、解决什么、带来什么提升、怎么部署/推广</strong>。</blockquote>
+
+            <hr>
+
+            <h2>三、Rubric 评分锚点</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>1 分（不足）</th>
+                            <th>3 分（达标）</th>
+                            <th>5 分（优秀）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>创新性</strong></td>
+                            <td>套壳/轻微改动</td>
+                            <td>有明确亮点</td>
+                            <td>有明显突破且可解释</td>
+                        </tr>
+                        <tr>
+                            <td><strong>商业价值</strong></td>
+                            <td>痛点泛泛，用户不清</td>
+                            <td>场景具体、价值可量化</td>
+                            <td>有验证迹象或可复制路径</td>
+                        </tr>
+                        <tr>
+                            <td><strong>完成度</strong></td>
+                            <td>只能「演」，不稳定</td>
+                            <td>端到端可跑通</td>
+                            <td>体验顺滑且答辩可解释</td>
+                        </tr>
+                        <tr>
+                            <td><strong>技术深度</strong></td>
+                            <td>不可复现/依赖混乱</td>
+                            <td>按 README 可复现</td>
+                            <td>低成本复现+离线兜底</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Box 适配</strong></td>
+                            <td>未体现端侧优势</td>
+                            <td>Box 环境可跑通</td>
+                            <td>端侧优势显著并有优化证据</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>四、硬门槛（不满足即淘汰）</h2>
+            <ul>
+                <li>能在 AI Box 或官方模拟环境跑通，并提供清晰复现步骤</li>
+                <li>不触碰敏感数据；不得提交密钥/账号</li>
+                <li>提交物齐全（README/视频/PPT/仓库），且版本已锁定</li>
+            </ul>
+
+            <hr>
+
+            <h2>五、院士/专家颁奖嘉宾（待落实）</h2>
+            <blockquote>最终在决赛前 2-4 周确认。</blockquote>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>角色</th>
+                            <th>候选人方向</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>颁奖嘉宾（学术）</td>
+                            <td>交大 AI/机器人领域院士或资深教授</td>
+                            <td>冠军颁奖</td>
+                        </tr>
+                        <tr>
+                            <td>颁奖嘉宾（行业）</td>
+                            <td>联发科高层 / AI 行业知名人物</td>
+                            <td>亚军或专项奖</td>
+                        </tr>
+                        <tr>
+                            <td>颁奖嘉宾（政府）</td>
+                            <td>海安经开区/地方政府代表</td>
+                            <td>季军或特别奖</td>
+                        </tr>
+                        <tr>
+                            <td>颁奖嘉宾（投资）</td>
+                            <td>合作 VC / 人工智能协会代表</td>
+                            <td>最具商业潜力奖</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </article>
+
+        <footer class="doc-footer">
+            <a href="community.html" class="back-link">← 返回开发者社区</a>
+            <p class="copyright">© 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.</p>
+        </footer>
+    </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>

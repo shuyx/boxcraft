@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP 与知识产权 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 知识产权政策：作品归属、赛事授权、主办方优先权益、仓库公开策略。">
+    <link rel="stylesheet" href="doc.css">
+</head>
+
+<body>
+    <nav class="doc-nav">
+        <div class="nav-inner">
+            <a href="community.html" class="nav-back">← 返回社区</a>
+            <span class="nav-title">BoxCraft <span class="green">2026</span></span>
+        </div>
+      <a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem; text-decoration:none; margin-left: auto;">🌙</a>
+    </nav>
+
+    <main class="doc-container">
+        <header class="doc-header">
+            <h1>📜 IP 与知识产权</h1>
+            <div class="meta">
+                <span>📌 版本 v0.4</span>
+                <span>📅 2026-03-05</span>
+            </div>
+        </header>
+
+        <article class="doc-content">
+
+            <h2>一、知识产权归属</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>条款</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>作品 IP 归属</strong></td>
+                            <td>作品知识产权（含代码/文档/素材等）<strong>默认归参赛团队所有</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>赛事授权</strong></td>
+                            <td>主办/赞助方获得<strong>非独占、合理期限</strong>的使用授权，仅用于：评审、展示、赛事传播</td>
+                        </tr>
+                        <tr>
+                            <td><strong>开源要求</strong></td>
+                            <td><strong>不强制开源</strong>；鼓励但不要求公开代码</td>
+                        </tr>
+                        <tr>
+                            <td><strong>最小交付</strong></td>
+                            <td>即使不开源，也需提交可复现 Demo 包 + 作品说明 + 演示视频</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <h2>二、主办方优先权益</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>权益</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>优先投资/合作窗口</strong></td>
+                            <td>赛后 <strong>60 天</strong>内，主办/赞助方享有优先投资、PoC 合作、许可/收购谈判的权利</td>
+                        </tr>
+                        <tr>
+                            <td><strong>优先沟通</strong></td>
+                            <td>窗口期内，参赛团队如收到第三方意向，需优先通知主办方</td>
+                        </tr>
+                        <tr>
+                            <td><strong>窗口期后</strong></td>
+                            <td>60 天结束后，团队自由处置，不设任何限制</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <blockquote>60 天足够完成初步对接，且对参赛者友好。</blockquote>
+
+            <hr>
+
+            <h2>三、仓库公开策略</h2>
+            <blockquote><strong>决策：赛后统一公开</strong></blockquote>
+            <ul>
+                <li><strong>开发期</strong>：默认私有（评委/导师可见）</li>
+                <li><strong>半决赛/决赛</strong>：仍保持私有</li>
+                <li><strong>赛后</strong>：统一转为公开（获奖公示后 1-2 周内）</li>
+                <li><strong>不愿公开的团队</strong>：可申请保持私有，但需提交可复现 Demo 包供展示</li>
+            </ul>
+            <p>理由：赛后公开更防抄袭、减少参赛者压力，且合规检查可在公开前完成。</p>
+
+        </article>
+
+        <footer class="doc-footer">
+            <a href="community.html" class="back-link">← 返回开发者社区</a>
+            <p class="copyright">© 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.</p>
+        </footer>
+    </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('boxcraft-theme', next);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    (function() {
+      const saved = localStorage.getItem('boxcraft-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    })();
+  </script>
+</body>
+
+</html>
