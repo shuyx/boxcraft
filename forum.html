@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发者论坛 — BoxCraft 2026</title>
+    <meta name="description" content="BoxCraft 2026 开发者论坛。参赛选手交流技术问题、分享经验、获取官方公告。">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forum.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="BoxCraft">
+                <span>BoxCraft <span class="year">2026</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="community.html">开发者社区</a></li>
+                <li><a href="forum.html" style="color:var(--green)">论坛</a></li>
+                <li><a href="docs.html">策划文档</a></li>
+                <li><a href="sdk.html" style="color:var(--green)">SDK 申请</a></li>
+                <li><a href="register.html" class="btn-primary" style="padding:8px 20px; font-size:0.85rem;">立即报名</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FORUM PAGE -->
+    <div class="forum-page">
+        <div class="forum-container">
+
+            <!-- ===== LOGIN VIEW ===== -->
+            <div id="loginView" class="forum-login">
+                <div class="comm-badge"
+                    style="display:inline-block;background:var(--dark-card);border:1px solid var(--dark-border);border-radius:40px;padding:6px 18px;font-size:0.75rem;color:var(--green);font-weight:600;letter-spacing:0.1em;margin-bottom:20px;">
+                    DEVELOPER FORUM</div>
+                <h1>开发者<span class="green">论坛</span></h1>
+                <p class="login-sub">使用你的参赛信息登录，与其他开发者交流</p>
+
+                <div class="login-card">
+                    <div class="form-group">
+                        <label>队伍编号 <span style="color:var(--green)">*</span></label>
+                        <input type="text" id="loginTeamId" placeholder="例：BC26-001" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label>队长邮箱 <span style="color:var(--green)">*</span></label>
+                        <input type="email" id="loginEmail" placeholder="报名时填写的邮箱" autocomplete="off">
+                    </div>
+                    <div id="loginError" class="login-error">队伍编号格式不正确，应为 BC26-XXX</div>
+                    <button class="btn-primary login-btn" onclick="handleLogin()">登 录</button>
+                    <p style="text-align:center;margin-top:16px;font-size:0.8rem;color:var(--gray);">还没报名？<a
+                            href="register.html">立即报名 →</a></p>
+                </div>
+            </div>
+
+            <!-- ===== FORUM LIST VIEW ===== -->
+            <div id="listView" style="display:none;">
+                <div class="forum-header">
+                    <h1>💬 开发者论坛</h1>
+                    <div class="forum-user-bar">
+                        <div class="user-badge">
+                            <div class="user-avatar" id="userAvatar"></div>
+                            <span id="userName"></span>
+                        </div>
+                        <button class="btn-primary" style="padding:8px 20px;font-size:0.85rem;"
+                            onclick="showNewPostModal()">✏️ 发帖</button>
+                        <button class="logout-btn" onclick="handleLogout()">退出</button>
+                    </div>
+                </div>
+
+                <div class="forum-tabs" id="forumTabs">
+                    <button class="forum-tab active" data-cat="all" onclick="filterPosts('all',this)">全部</button>
+                    <button class="forum-tab" data-cat="announce" onclick="filterPosts('announce',this)">📢 公告</button>
+                    <button class="forum-tab" data-cat="tech" onclick="filterPosts('tech',this)">💻 技术交流</button>
+                    <button class="forum-tab" data-cat="chat" onclick="filterPosts('chat',this)">💬 自由讨论</button>
+                </div>
+
+                <div class="post-list" id="postList"></div>
+            </div>
+
+            <!-- ===== POST DETAIL VIEW ===== -->
+            <div id="detailView" class="post-detail">
+                <button class="back-btn" onclick="showListView()">← 返回列表</button>
+                <div class="detail-card">
+                    <div class="detail-header">
+                        <div class="detail-title" id="detailTitle"></div>
+                        <div class="detail-meta" id="detailMeta"></div>
+                    </div>
+                    <div class="detail-content" id="detailContent"></div>
+                </div>
+
+                <div class="replies-section">
+                    <h3 id="repliesTitle">回复</h3>
+                    <div id="repliesList"></div>
+                    <div class="reply-form">
+                        <textarea id="replyInput" placeholder="写下你的回复…"></textarea>
+                        <button class="btn-primary reply-submit" onclick="submitReply()">发送</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== NEW POST MODAL ===== -->
+    <div class="modal-overlay" id="newPostModal">
+        <div class="modal-box">
+            <h2>✏️ 发布新帖子</h2>
+            <div class="form-group">
+                <label>标题 <span style="color:var(--green)">*</span></label>
+                <input type="text" id="newPostTitle" placeholder="输入帖子标题" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label>版块 <span style="color:var(--green)">*</span></label>
+                <select id="newPostCat">
+                    <option value="tech">💻 技术交流</option>
+                    <option value="chat">💬 自由讨论</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>内容 <span style="color:var(--green)">*</span></label>
+                <textarea id="newPostContent" placeholder="支持 Markdown 格式"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-cancel" onclick="hideNewPostModal()">取消</button>
+                <button class="btn-primary" style="padding:12px 28px;font-size:0.9rem;"
+                    onclick="submitNewPost()">发布</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="organizers">
+            <div class="org-row">主办：<strong>上海交通大学机器人研究所</strong> · <strong>上海祥承科技有限公司</strong></div>
+            <div class="org-row">协办：<strong>海安上海交通大学智能装备研究院</strong> · <strong>上海人工智能协会</strong></div>
+            <div class="org-row">技术支持：<strong>联发科技（MediaTek）</strong></div>
+        </div>
+        <div class="copyright">
+            © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // ============================================================
+        // BoxCraft 2026 Developer Forum — Client-side SPA
+        // Data persisted in localStorage
+        // ============================================================
+
+        const STORAGE_KEY = 'boxcraft_forum';
+        const USER_KEY = 'boxcraft_forum_user';
+
+        // --- Default pinned post ---
+        const DEFAULT_POSTS = [{
+            id: 'post-000',
+            title: '📋 BoxCraft 2026 开发者论坛管理制度',
+            category: 'announce',
+            pinned: true,
+            author: 'BoxCraft 组委会',
+            teamId: 'ADMIN',
+            time: '2026-03-06T12:00:00',
+            content: `<h3>一、论坛宗旨</h3>
+<p>BoxCraft 2026 开发者论坛是参赛选手与组委会之间的<strong>技术交流平台</strong>。我们倡导<strong>开放、尊重、协作</strong>的社区氛围，鼓励大家在这里分享经验、提出问题、互相帮助。</p>
+
+<h3>二、版块说明</h3>
+<ul>
+<li><strong>📢 公告</strong>：组委会发布的赛事通知、规则更新、重要提醒（仅管理员可发）</li>
+<li><strong>💻 技术交流</strong>：SDK 使用问题、技术方案讨论、Bug 反馈、经验分享</li>
+<li><strong>💬 自由讨论</strong>：组队、资源分享、灵感碰撞等非技术话题</li>
+</ul>
+
+<h3>三、行为准则</h3>
+<ol>
+<li><strong>尊重他人</strong>：禁止人身攻击、歧视、骚扰等不当言论</li>
+<li><strong>保护知识产权</strong>：禁止发布他人代码或作品（除公开开源项目外）</li>
+<li><strong>遵守保密义务</strong>：禁止公开分享 AI Box SDK 源代码、内部文档等受保密协议保护的内容</li>
+<li><strong>拒绝作弊</strong>：禁止分享可能导致不公平竞争的信息（如未公开的评测数据集）</li>
+<li><strong>禁止广告</strong>：禁止发布商业推广、招聘信息等与赛事无关的内容</li>
+<li><strong>实名交流</strong>：使用你报名时的队伍信息登录，确保可溯源</li>
+</ol>
+
+<h3>四、违规处理</h3>
+<ul>
+<li><strong>第一次违规</strong>：私信警告 + 删除违规内容</li>
+<li><strong>第二次违规</strong>：论坛禁言 7 天</li>
+<li><strong>严重违规</strong>：永久禁言 + 报告组委会，可能影响参赛资格</li>
+<li>涉及 SDK 泄露等严重保密违规，将<strong>直接取消参赛资格并收回设备</strong></li>
+</ul>
+
+<h3>五、投诉与建议</h3>
+<p>如发现违规行为或有改进建议，请发送邮件至：<code>boxcraft2026@xctech.com</code></p>
+<p>组委会将在 <strong>1 个工作日内</strong>处理投诉。</p>
+
+<h3>六、免责声明</h3>
+<p>论坛中用户发表的观点仅代表个人，不代表组委会立场。组委会保留对论坛内容的最终管理权。</p>`,
+            replies: [{
+                id: 'reply-000-1',
+                author: 'BoxCraft 组委会',
+                teamId: 'ADMIN',
+                time: '2026-03-06T12:00:00',
+                text: '欢迎各位参赛选手！如有任何问题，可在本帖下方回复或发新帖讨论。祝大家比赛顺利！🎉'
+            }]
+        }];
+
+        // --- Helpers ---
+        function getPosts() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            if (!data) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_POSTS));
+                return JSON.parse(JSON.stringify(DEFAULT_POSTS));
+            }
+            return JSON.parse(data);
+        }
+
+        function savePosts(posts) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+        }
+
+        function getUser() {
+            const u = localStorage.getItem(USER_KEY);
+            return u ? JSON.parse(u) : null;
+        }
+
+        function formatTime(iso) {
+            const d = new Date(iso);
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const dd = String(d.getDate()).padStart(2, '0');
+            const hh = String(d.getHours()).padStart(2, '0');
+            const mi = String(d.getMinutes()).padStart(2, '0');
+            return `${d.getFullYear()}-${mm}-${dd} ${hh}:${mi}`;
+        }
+
+        function catLabel(cat) {
+            const map = { announce: '📢 公告', tech: '💻 技术交流', chat: '💬 自由讨论' };
+            return map[cat] || cat;
+        }
+
+        function catClass(cat) {
+            return cat;
+        }
+
+        function genId() {
+            return 'post-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5);
+        }
+
+        // --- Auth ---
+        function handleLogin() {
+            const teamId = document.getElementById('loginTeamId').value.trim();
+            const email = document.getElementById('loginEmail').value.trim();
+            const errEl = document.getElementById('loginError');
+
+            if (!/^BC26-\d{3,}$/i.test(teamId)) {
+                errEl.textContent = '队伍编号格式不正确，应为 BC26-XXX（如 BC26-001）';
+                errEl.style.display = 'block';
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                errEl.textContent = '请输入有效的邮箱地址';
+                errEl.style.display = 'block';
+                return;
+            }
+
+            errEl.style.display = 'none';
+            const user = { teamId: teamId.toUpperCase(), email };
+            localStorage.setItem(USER_KEY, JSON.stringify(user));
+            showForumView();
+        }
+
+        function handleLogout() {
+            localStorage.removeItem(USER_KEY);
+            location.reload();
+        }
+
+        // --- Views ---
+        function showForumView() {
+            const user = getUser();
+            if (!user) {
+                document.getElementById('loginView').style.display = '';
+                document.getElementById('listView').style.display = 'none';
+                document.getElementById('detailView').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('loginView').style.display = 'none';
+            document.getElementById('listView').style.display = '';
+            document.getElementById('detailView').style.display = 'none';
+
+            document.getElementById('userAvatar').textContent = user.teamId.slice(-3);
+            document.getElementById('userName').textContent = user.teamId;
+
+            renderPosts('all');
+        }
+
+        function showListView() {
+            document.getElementById('listView').style.display = '';
+            document.getElementById('detailView').style.display = 'none';
+            renderPosts(currentFilter);
+        }
+
+        let currentFilter = 'all';
+        let currentPostId = null;
+
+        function filterPosts(cat, btn) {
+            currentFilter = cat;
+            document.querySelectorAll('.forum-tab').forEach(t => t.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderPosts(cat);
+        }
+
+        function renderPosts(cat) {
+            const posts = getPosts();
+            const list = document.getElementById('postList');
+
+            let filtered = cat === 'all' ? posts : posts.filter(p => p.category === cat);
+            // Sort: pinned first, then by time desc
+            filtered.sort((a, b) => {
+                if (a.pinned && !b.pinned) return -1;
+                if (!a.pinned && b.pinned) return 1;
+                return new Date(b.time) - new Date(a.time);
+            });
+
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-icon">📭</div><p>暂无帖子，成为第一个发言的人吧！</p></div>';
+                return;
+            }
+
+            list.innerHTML = filtered.map(p => `
+            <div class="post-card ${p.pinned ? 'pinned' : ''}" onclick="showPost('${p.id}')">
+                ${p.pinned ? '<div class="post-pin">📌</div>' : ''}
+                <div class="post-body">
+                    <div class="post-title">${escHtml(p.title)}</div>
+                    <div class="post-meta">
+                        <span class="post-tag ${catClass(p.category)}">${catLabel(p.category)}</span>
+                        <span>${escHtml(p.author)}</span>
+                        <span>${formatTime(p.time)}</span>
+                        <span class="post-replies-count">💬 ${(p.replies || []).length}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        }
+
+        function showPost(id) {
+            const posts = getPosts();
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            currentPostId = id;
+            document.getElementById('listView').style.display = 'none';
+            document.getElementById('detailView').style.display = 'block';
+
+            document.getElementById('detailTitle').innerHTML = escHtml(post.title);
+            document.getElementById('detailMeta').innerHTML = `
+            <span class="post-tag ${catClass(post.category)}">${catLabel(post.category)}</span>
+            <span>${escHtml(post.author)}</span>
+            <span>${formatTime(post.time)}</span>
+        `;
+            document.getElementById('detailContent').innerHTML = post.content;
+
+            renderReplies(post);
+        }
+
+        function renderReplies(post) {
+            const replies = post.replies || [];
+            document.getElementById('repliesTitle').textContent = `回复（${replies.length}）`;
+
+            if (replies.length === 0) {
+                document.getElementById('repliesList').innerHTML = '<div class="empty-state" style="padding:30px 20px;"><div class="empty-icon">💬</div><p>暂无回复，说点什么吧</p></div>';
+                return;
+            }
+
+            document.getElementById('repliesList').innerHTML = replies.map(r => `
+            <div class="reply-item">
+                <div class="reply-meta">
+                    <span class="reply-author">${escHtml(r.author)}</span>
+                    <span>${formatTime(r.time)}</span>
+                </div>
+                <div class="reply-text">${escHtml(r.text)}</div>
+            </div>
+        `).join('');
+        }
+
+        function submitReply() {
+            const input = document.getElementById('replyInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const user = getUser();
+            if (!user) return;
+
+            const posts = getPosts();
+            const post = posts.find(p => p.id === currentPostId);
+            if (!post) return;
+
+            if (!post.replies) post.replies = [];
+            post.replies.push({
+                id: 'reply-' + Date.now(),
+                author: user.teamId,
+                teamId: user.teamId,
+                time: new Date().toISOString(),
+                text: text
+            });
+
+            savePosts(posts);
+            input.value = '';
+            renderReplies(post);
+        }
+
+        // --- New Post ---
+        function showNewPostModal() {
+            document.getElementById('newPostModal').classList.add('show');
+            document.getElementById('newPostTitle').value = '';
+            document.getElementById('newPostContent').value = '';
+            document.getElementById('newPostCat').value = 'tech';
+        }
+
+        function hideNewPostModal() {
+            document.getElementById('newPostModal').classList.remove('show');
+        }
+
+        function submitNewPost() {
+            const title = document.getElementById('newPostTitle').value.trim();
+            const cat = document.getElementById('newPostCat').value;
+            const content = document.getElementById('newPostContent').value.trim();
+
+            if (!title || !content) {
+                alert('请填写标题和内容');
+                return;
+            }
+
+            const user = getUser();
+            if (!user) return;
+
+            const posts = getPosts();
+            const newPost = {
+                id: genId(),
+                title: title,
+                category: cat,
+                pinned: false,
+                author: user.teamId,
+                teamId: user.teamId,
+                time: new Date().toISOString(),
+                content: '<p>' + escHtml(content).replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>',
+                replies: []
+            };
+
+            posts.push(newPost);
+            savePosts(posts);
+            hideNewPostModal();
+            renderPosts(currentFilter);
+        }
+
+        // --- Modal outside click ---
+        document.getElementById('newPostModal').addEventListener('click', function (e) {
+            if (e.target === this) hideNewPostModal();
+        });
+
+        // --- Escape HTML ---
+        function escHtml(str) {
+            const d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', function () {
+            showForumView();
+        });
+    </script>
+
+</body>
+
+</html>

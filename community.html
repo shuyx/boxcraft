@@ -27,8 +27,11 @@
                 <li><a href="#resources">资源</a></li>
                 <li><a href="#discuss">社区</a></li>
                 <li><a href="docs.html">策划文档</a></li>
-        <li><a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题" style="font-size:1.1rem;">🌙</a></li>
-        <li><a href="register.html" class="btn-primary" style="padding:8px 20px; font-size:0.85rem;">立即报名</a>
+                <li><a href="forum.html">论坛</a></li>
+                <li><a href="#" onclick="toggleTheme();return false;" id="themeToggle" title="切换主题"
+                        style="font-size:1.1rem;">🌙</a></li>
+                <li><a href="sdk.html" style="color:var(--green)">SDK 申请</a></li>
+                <li><a href="register.html" class="btn-primary" style="padding:8px 20px; font-size:0.85rem;">立即报名</a>
                 </li>
             </ul>
         </div>
@@ -209,7 +212,7 @@
                     <div class="res-icon">📦</div>
                     <h4>AI Box SDK</h4>
                     <p>Python SDK v2.0，支持端侧推理和 Agent 编排</p>
-                    <a href="#" class="res-link">下载 →</a>
+                    <a href="sdk.html" class="res-link">申请 SDK →</a>
                 </div>
                 <div class="res-card">
                     <div class="res-icon">🧪</div>
@@ -293,7 +296,6 @@
             <div class="org-row">主办：<strong>上海交通大学机器人研究所</strong> · <strong>上海祥承科技有限公司</strong></div>
             <div class="org-row">协办：<strong>海安上海交通大学智能装备研究院</strong> · <strong>上海人工智能协会</strong></div>
             <div class="org-row">技术支持：<strong>联发科技（MediaTek）</strong></div>
-            <div class="org-row" style="color:#666; font-size:0.8rem;">协办（拟）：海安上海交通大学智能装备研究院 · 上海人工智能协会</div>
         </div>
         <div class="copyright">
             © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
@@ -311,24 +313,24 @@
     </script>
 
 
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('boxcraft-theme', next);
-      const btn = document.getElementById('themeToggle');
-      if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
-    }
-    (function() {
-      const saved = localStorage.getItem('boxcraft-theme');
-      if (saved) {
-        document.documentElement.setAttribute('data-theme', saved);
-        const btn = document.getElementById('themeToggle');
-        if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
-      }
-    })();
-  </script>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('boxcraft-theme', next);
+            const btn = document.getElementById('themeToggle');
+            if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+        }
+        (function () {
+            const saved = localStorage.getItem('boxcraft-theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+                const btn = document.getElementById('themeToggle');
+                if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';
+            }
+        })();
+    </script>
 </body>
 
 </html>

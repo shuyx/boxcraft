@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK 申请 — BoxCraft 2026</title>
+    <meta name="description" content="申请 BoxCraft 2026 AI Box SDK 开发包。入围队伍签署参赛协议后即可获得下载链接。">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+    <style>
+        /* SDK page overrides */
+        .sdk-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .sdk-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .sdk-step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sdk-step-body h4 {
+            margin: 0 0 4px;
+            font-size: 0.95rem;
+            color: var(--fg);
+        }
+
+        .sdk-step-body p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .sdk-notice {
+            background: rgba(0, 255, 128, 0.06);
+            border: 1px solid rgba(0, 255, 128, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .sdk-notice strong {
+            color: var(--green);
+        }
+
+        .form-note {
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="BoxCraft">
+                <span>BoxCraft <span class="year">2026</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="community.html">开发者社区</a></li>
+                <li><a href="index.html#tracks">赛道</a></li>
+                <li><a href="index.html#prizes">奖项</a></li>
+                <li><a href="docs.html">策划文档</a></li>
+                <li><a href="forum.html">论坛</a></li>
+                <li><a href="sdk.html" style="color:var(--green)">SDK 申请</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SDK PAGE -->
+    <section class="register-page">
+        <div class="register-container">
+
+            <!-- Left: Info -->
+            <div class="register-info fade-in">
+                <div class="comm-badge">SDK · DEVELOPER ACCESS</div>
+                <h1>申请<br><span class="green">AI Box SDK</span></h1>
+                <p>BoxCraft 2026 官方 SDK 面向正式入围队伍开放申请。完成申请后，签署参赛协议即可获得下载链接。</p>
+
+                <div class="sdk-steps">
+                    <div class="sdk-step">
+                        <div class="sdk-step-num">1</div>
+                        <div class="sdk-step-body">
+                            <h4>确认入围资格</h4>
+                            <p>仅限收到"正式入围通知"邮件的队伍申请，申请时需填写入围编号。</p>
+                        </div>
+                    </div>
+                    <div class="sdk-step">
+                        <div class="sdk-step-num">2</div>
+                        <div class="sdk-step-body">
+                            <h4>填写申请表</h4>
+                            <p>提供团队信息、AI Box 设备序列号（如已分配）及使用用途声明。</p>
+                        </div>
+                    </div>
+                    <div class="sdk-step">
+                        <div class="sdk-step-num">3</div>
+                        <div class="sdk-step-body">
+                            <h4>签署参赛协议</h4>
+                            <p>在线电子签署《参赛协议》（含 SDK 保密条款），全程约 2 分钟。</p>
+                        </div>
+                    </div>
+                    <div class="sdk-step">
+                        <div class="sdk-step-num">4</div>
+                        <div class="sdk-step-body">
+                            <h4>收到下载链接</h4>
+                            <p>运营审核通过后（1 个工作日内），SDK 下载链接将发送至队长邮箱。链接有效期 72h，限 3 次下载。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sdk-notice">
+                    <strong>⚠️ 注意</strong>：SDK 仅供 BoxCraft 2026 赛事开发使用，禁止转发或商用。违反保密条款将取消参赛资格。
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="register-form-wrap fade-in">
+                <form class="register-form" id="sdkForm" onsubmit="handleSdkSubmit(event)">
+
+                    <!-- Qualification -->
+                    <div class="form-section">
+                        <h3>✅ 入围信息</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="teamId">入围编号 <span class="req">*</span></label>
+                                <input type="text" id="teamId" placeholder="e.g. BC26-025" required>
+                                <div class="form-note">收到的入围通知邮件中有编号</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamName">团队名称 <span class="req">*</span></label>
+                                <input type="text" id="teamName" placeholder="与报名时一致" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Captain Info -->
+                    <div class="form-section">
+                        <h3>👤 队长信息</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="captainName">姓名 <span class="req">*</span></label>
+                                <input type="text" id="captainName" placeholder="队长真实姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="captainEmail">邮箱 <span class="req">*</span></label>
+                                <input type="email" id="captainEmail" placeholder="SDK 链接将发至此邮箱" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Info -->
+                    <div class="form-section">
+                        <h3>📦 设备信息</h3>
+                        <div class="form-group">
+                            <label for="deviceSN">AI Box 设备序列号</label>
+                            <input type="text" id="deviceSN" placeholder="设备背面标签（如已收到设备）">
+                            <div class="form-note">设备未发出时可留空，发货后补填</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="useCase">SDK 用途说明 <span class="req">*</span></label>
+                            <textarea id="useCase" rows="3" placeholder="简述你计划用 SDK 开发什么功能（50 字以内，与参赛方向一致）"
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Agreement -->
+                    <div class="form-section">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span>我已阅读并同意 <a href="#" target="_blank" style="color:var(--green)">《参赛协议》</a>（含 SDK
+                                保密条款）</span>
+                        </label>
+                        <label class="checkbox-label" style="margin-top:10px;">
+                            <input type="checkbox" id="agreeNda" required>
+                            <span>我承诺 SDK 仅用于 BoxCraft 2026 赛事开发，不转发、不商用</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary submit-btn">提交 SDK 申请</button>
+                </form>
+
+                <!-- Success State -->
+                <div class="success-state" id="successState" style="display:none;">
+                    <div class="success-icon">📦</div>
+                    <h2>申请已提交！</h2>
+                    <p>我们将在 <strong style="color:var(--green)">1 个工作日内</strong> 审核你的申请，并将 SDK 下载链接发送至队长邮箱。</p>
+                    <p style="color:var(--gray); margin-top: 12px;">下载链接有效期 72 小时，请及时下载保存。</p>
+                    <div style="margin-top: 24px; display:flex; gap: 12px; justify-content: center;">
+                        <a href="community.html" class="btn-primary">加入开发者社区</a>
+                        <a href="index.html" class="btn-outline">返回首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="organizers">
+            <div class="org-row">主办：<strong>上海交通大学机器人研究所</strong> · <strong>上海祥承科技有限公司</strong></div>
+            <div class="org-row">协办：<strong>海安上海交通大学智能装备研究院</strong> · <strong>上海人工智能协会</strong></div>
+            <div class="org-row">技术支持：<strong>联发科技（MediaTek）</strong></div>
+        </div>
+        <div class="copyright">
+            © 2026 BoxCraft — AI Box 端侧 Agent 开发挑战赛. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        function handleSdkSubmit(e) {
+            e.preventDefault();
+            document.getElementById('sdkForm').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Theme persistence
+        (function () {
+            const saved = localStorage.getItem('boxcraft-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+</body>
+
+</html>
