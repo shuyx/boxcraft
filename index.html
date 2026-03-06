@@ -20,7 +20,12 @@
         <img src="assets/logo.png" alt="BoxCraft">
         <span>BoxCraft <span class="year">2026</span></span>
       </a>
-      <ul class="nav-links">
+      <div class="hamburger"
+        onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links"
+        onclick="if(window.innerWidth<=768){this.classList.remove('open');document.querySelector('.hamburger').classList.remove('active')}">
         <li><a href="#about">关于</a></li>
         <li><a href="#tracks">赛道</a></li>
         <li><a href="#timeline">赛程</a></li>
